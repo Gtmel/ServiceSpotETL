@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{85F2BBDF-72F0-47EE-8CEF-CAF76763A3D4}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{8994D009-F11A-4DEB-9FF2-F27B24C66716}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -877,11 +877,11 @@
     design-time-name="Package\DFT - ODS Call_charges">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="175,43"
           Id="Package\DFT - ODS Call_charges\UPVT  -call charges"
-          TopLeft="166.624987231568,96.6491222435804" />
+          TopLeft="169.624987231568,95.6491222435804" />
         <NodeLayout
           Size="219,42"
           Id="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges"
@@ -900,50 +900,46 @@
           TopLeft="153.749995585531,267.157892670906" />
         <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
-          TopLeft="255.124992540107,139.64912224358">
+          TopLeft="256.624992540107,138.64912224358">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.2456133589626"
+              EndConnector="0,39.2456133589626"
               Start="0,0"
-              End="0,30.7456133589626">
+              End="0,31.7456133589626">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.7456133589626" />
+                    End="0,31.7456133589626" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.1244140625,9.7512246482313,50.248828125,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie de source OLE DB]"
-          TopLeft="254.937490346842,49.5263157068362">
+          TopLeft="256.437490346842,49.5263157068362">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.1228065367442"
+              EndConnector="0,46.1228065367442"
               Start="0,0"
-              End="0,39.6228065367442">
+              End="0,38.6228065367442">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.6228065367442" />
+                    End="0,38.6228065367442" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-20.95265625,15.0101337371221,41.9053125,9.6025390625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -965,9 +961,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,11.307925143689,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -989,9 +983,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.1244140625,14.2599965029315,50.248828125,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
