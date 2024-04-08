@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{8994D009-F11A-4DEB-9FF2-F27B24C66716}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{ED868B6F-6672-42A7-934D-CAC189CB7382}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -81,7 +81,7 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]"
                       name="Cost_per_min_R"
-                      precision="18"
+                      precision="4"
                       scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -331,7 +331,7 @@
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[Cost_per_min_R]"
                       cachedDataType="numeric"
                       cachedName="Cost_per_min_R"
-                      cachedPrecision="18"
+                      cachedPrecision="4"
                       cachedScale="2"
                       externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Cost_per_min]"
                       lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]" />
@@ -342,35 +342,18 @@
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="20"
                       name="Call Type" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Year]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i8"
                       name="Year" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Cost_per_min]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="Cost_per_min" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Cost_per_min_R]"
                       dataType="numeric"
-                      name="Cost_per_min_R"
+                      name="Cost_per_min"
                       precision="18"
                       scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Year_R]"
-                      dataType="i8"
-                      name="Year_R" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type_R]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Call Type_R" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -424,7 +407,9 @@
                   dataType="System.String"
                   description="Commande SQL à exécuter."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+  FROM [SS_STA].[dbo].[Call_charges]
+  WHERE [Call Type ] != ''</property>
                 <property
                   dataType="System.String"
                   description="Variable contenant la commande SQL à exécuter."
@@ -441,7 +426,7 @@
                   dataType="System.Int32"
                   description="Spécifie le mode utilisé pour accéder à la base de données."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="Mappages entre les paramètres de la commande SQL et les variables."
@@ -879,17 +864,13 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175,43"
-          Id="Package\DFT - ODS Call_charges\UPVT  -call charges"
-          TopLeft="169.624987231568,95.6491222435804" />
+          Size="226,42"
+          Id="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges"
+          TopLeft="145.124996284023,348.842102333284" />
         <NodeLayout
           Size="219,42"
           Id="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges"
           TopLeft="146.249993462116,7.52631570683622" />
-        <NodeLayout
-          Size="226,42"
-          Id="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges"
-          TopLeft="145.124996284023,348.842102333284" />
         <NodeLayout
           Size="174,42"
           Id="Package\DFT - ODS Call_charges\DER -  cost replace"
@@ -898,28 +879,10 @@
           Size="206,42"
           Id="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype"
           TopLeft="153.749995585531,267.157892670906" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
-          TopLeft="256.624992540107,138.64912224358">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.2456133589626"
-              Start="0,0"
-              End="0,31.7456133589626">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.7456133589626" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="175,43"
+          Id="Package\DFT - ODS Call_charges\UPVT  -call charges"
+          TopLeft="169.624987231568,95.6491222435804" />
         <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie de source OLE DB]"
           TopLeft="256.437490346842,49.5263157068362">
@@ -986,11 +949,33 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
+          TopLeft="256.624992540107,138.64912224358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.2456133589626"
+              Start="0,0"
+              End="0,31.7456133589626">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7456133589626" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges">
+    design-time-name="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1003,7 +988,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges">
+    design-time-name="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

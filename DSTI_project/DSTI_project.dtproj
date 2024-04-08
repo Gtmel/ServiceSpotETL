@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-0AVDDIC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAG23DDGf9gEedSPcS//d81AAAAAACAAAAAAAQZgAAAAEAACAAAABFUTbyjKjzVH+cCesaFrBSCtXEQY6djuF9iLMuDYfoPwAAAAAOgAAAAAIAACAAAACPcGhTL4q4WT0jrwQyRxAoQy+RAhFsTfgrHYWG31lonZAAAAD2gzGawJDMb/RYlkO1BUY5hOigOr7dVRGkM1QRJdfSrRirUT4/CuiJ1tsGrX+NSuxL15RjN0lhCPE4g5dsJLAijVXYHg2VvZqfOA3NfEppInFB28rU9X5nZifMfxmxSnyX4gjESJG48k5EoOCTBadYBWc9kc8FaGZ++sc5qrCyWijVB0/ZclN6Rv2rOWPQt8VAAAAAcbUCxbw7OBCwkOv+fM6maiWsEeusmzyS1dPLbWc2q/AXbT9HKVvumduuAiS0/i0YDE0BaZuVYk06Xes9tfWvxw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAG23DDGf9gEedSPcS//d81AAAAAACAAAAAAAQZgAAAAEAACAAAADPL8jQox0dpe2svMaj/ePwbXvuvLxvfZK4g7bDY/93ewAAAAAOgAAAAAIAACAAAAB4TWMEMH+zPsN9mqX+q0y0vSYe8eEhP9rzrR62njE3/pAAAACMl3z60YIAnHcF6Rg/PkFStX75EaEJZDl0V5cIs/yCGkU27DSh9TK4xsONk7xs10nqWvPhefrdU8gAQlkMAL064q4PHZvgdztt+MJxIxGZM0Gn9VZMXXF7hTs2slZcnHj41ZQ2SCblRlQWL9pWzJIdsCWS+cziD8VOd0++ESXZ7mcV+MqUTNccFsQ8ccx6X8RAAAAAhEdA8iA7xncn94hPbEz47HqlpES450AQvw65AZl1b9DyUB9aiP1MTfTyHaHrwlwrfT7xDqbjgeXusqD58tSkpw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -37,6 +37,7 @@
           <SSIS:Package SSIS:Name="STA_Call_data.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ODS_Call_data.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ODS_Call_charges.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ODS_Employee.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="localhost.SS_STA.conmgr" />
@@ -497,10 +498,10 @@
                 <SSIS:Property SSIS:Name="Name">STA_Call_charges</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">37</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">38</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BB2986C5-3A7D-48F4-AE52-D525B84F0E7A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{20D724F9-DCD2-4FE0-8FE9-3DD06F6EA4EE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -565,21 +566,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Flat File Connection Manager.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Call Charges.csv</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Flat File Connection Manager.DataRowsToSkip">
@@ -712,10 +698,10 @@
                 <SSIS:Property SSIS:Name="Name">STA_Employee</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">15</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">16</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3ECCE3B4-B27B-4C7E-9A27-CD15C8ACC6C7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{349DFE5A-C4A9-4DDE-B161-E7A37FF1C0B4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -780,21 +766,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Flat File Connection Manager.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Employees.csv</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Flat File Connection Manager.DataRowsToSkip">
@@ -927,10 +898,10 @@
                 <SSIS:Property SSIS:Name="Name">Package2</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">19</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">20</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{102CB118-987B-4F1E-B3C6-434797A63CC6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{891D6E26-EECE-454A-8A63-4207C6A70291}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -995,21 +966,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Flat File Connection Manager.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Call Types.csv</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Flat File Connection Manager.DataRowsToSkip">
@@ -1142,10 +1098,10 @@
                 <SSIS:Property SSIS:Name="Name">STA_States</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">11</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">26</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{57341945-DBDB-45C1-B02A-A16FD1DA52C5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1814721D-9958-4E47-BB16-F89C9F01EB24}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1210,21 +1166,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Flat File Connection Manager.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\US States.csv</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Flat File Connection Manager.DataRowsToSkip">
@@ -1357,10 +1298,10 @@
                 <SSIS:Property SSIS:Name="Name">STA_Call_data</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">40</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DE93A0BE-ED8D-444D-B6DF-12B8D5BE6115}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0CC0F61D-ABE9-4020-85E4-8DF5DC39971D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1557,10 +1498,10 @@
                 <SSIS:Property SSIS:Name="Name">ODS_Call_data</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">15</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E52A181B-62A8-4C69-9DFA-02F38F21D8B2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{35C4E085-754C-4D6F-B733-C94CF1B9D17C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1574,10 +1515,27 @@
                 <SSIS:Property SSIS:Name="Name">ODS_Call_charges</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">35</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">53</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DBA59F78-38DE-4C58-9738-89B6AEBBA792}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{ED868B6F-6672-42A7-934D-CAC189CB7382}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ODS_Employee.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{16459392-FB05-411B-BB33-51E9AEEB1369}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ODS_Employee</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AC3E701E-29DC-4004-946C-1C37188A4401}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1612,7 +1570,12 @@
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2024-04-05T14:45:27.8010676Z</Value>
+            <Value xsi:type="xsd:dateTime">2024-04-08T18:53:06.5017386Z</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>{02cb6e70-64c5-46ef-b66e-3487aa800e33}</Id>
+            <Name>Project::RootFile</Name>
+            <Value xsi:type="xsd:string">C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\</Value>
           </ConfigurationSetting>
         </ParameterConfigurationValues>
       </Options>

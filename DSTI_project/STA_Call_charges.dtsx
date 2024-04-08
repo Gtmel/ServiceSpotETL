@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{BB2986C5-3A7D-48F4-AE52-D525B84F0E7A}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{20D724F9-DCD2-4FE0-8FE9-3DD06F6EA4EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{C3C39B2A-BDC8-4F23-BEC2-F4C4174D47A2}"
       DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::RootFile] + "Call Charges.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"

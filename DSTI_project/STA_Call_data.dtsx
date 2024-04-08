@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{7A9A4F47-0356-457D-8431-56DB1398A31D}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{0CC0F61D-ABE9-4020-85E4-8DF5DC39971D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -126,10 +126,12 @@
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
         DTS:DTSID="{A2FB62D5-F699-445C-BEA8-0A97A9E416EA}"
         DTS:ObjectName="{A2FB62D5-F699-445C-BEA8-0A97A9E416EA}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Project::RootFile] + "Calls Data"</DTS:PropertyExpression>
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Calls data" />
+              Folder="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Calls Data" />
             <FEFEProperty
               FileSpec="*.csv" />
             <FEFEProperty
@@ -624,8 +626,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{0F2339BE-5A23-4D33-AF7D-C01F9499153D}"
-          DTS:ObjectName="{0F2339BE-5A23-4D33-AF7D-C01F9499153D}"
+          DTS:DTSID="{1A57EEA7-6EEF-47D2-9324-069BE6232475}"
+          DTS:ObjectName="{1A57EEA7-6EEF-47D2-9324-069BE6232475}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::Filepath" />
       </DTS:ForEachVariableMappings>
@@ -676,29 +678,29 @@
           TopLeft="42.5416567480815,24.4736820093649" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="307,123"
-          Size="307,43"
+          Size="307,166"
           Id="Package\FELC - Call Data folder"
-          TopLeft="226.374990193174,135.684209234166" />
+          TopLeft="151.374990193174,160.684209234166" />
         <NodeLayout
           Size="219,42"
           Id="Package\SQL - TRUNCATE Call Data"
-          TopLeft="269.000000670552,41.1578943837548" />
+          TopLeft="189.000000670552,46.1578943837548" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="379.187495431863,83.1578943837548">
+          TopLeft="301.687495431863,88.1578943837548">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52.5263148504112"
+              EndConnector="0,72.5263148504112"
               Start="0,0"
-              End="0,45.0263148504112">
+              End="0,65.0263148504112">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.0263148504112" />
+                    End="0,65.0263148504112" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -722,7 +724,7 @@
         <NodeLayout
           Size="221,43"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data\OLE_DST -STA Call data"
-          TopLeft="157.999989494682,211.421050310218" />
+          TopLeft="157.999989494682,210.421050310218" />
         <NodeLayout
           Size="156,43"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data\CNT - Rows"
@@ -751,18 +753,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FELC - Call Data folder\DFT_STA_Call data.Paths[Nombre de lignes sortie 1]"
-          TopLeft="269.81248875428,169.736840790576">
+          TopLeft="269.812488754281,169.736840790576">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.684209519642"
+              EndConnector="0,40.684209519642"
               Start="0,0"
-              End="0,34.184209519642">
+              End="0,33.184209519642">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.184209519642" />
+                    End="0,33.184209519642" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

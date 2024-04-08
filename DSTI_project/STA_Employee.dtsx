@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{3ECCE3B4-B27B-4C7E-9A27-CD15C8ACC6C7}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{349DFE5A-C4A9-4DDE-B161-E7A37FF1C0B4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{8DF2935C-85AB-4F13-82A7-E1FC4A1D321B}"
       DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::RootFile] + "Employees.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"

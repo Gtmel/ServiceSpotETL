@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_States"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{57341945-DBDB-45C1-B02A-A16FD1DA52C5}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{1814721D-9958-4E47-BB16-F89C9F01EB24}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{E31ECBF4-CEFA-4911-A85C-55A6C386F2CB}"
       DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::RootFile] + "US States.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -39,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="StateCD"
-              DTS:DTSID="{F5510BD1-96B5-4AA8-A386-10EF5F0D02EE}"
+              DTS:DTSID="{1751C927-C3B2-4469-97A0-6010853CF406}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Name"
-              DTS:DTSID="{C687A3B5-F951-4B78-B1E7-A9A31CB577CA}"
+              DTS:DTSID="{7D94375F-8ED4-49A6-BC37-4B670F1B3AF2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{85200B67-EC49-4E28-B1A1-77BA845706FA}"
+              DTS:DTSID="{9BEC5037-11ED-4C4D-A7EB-CE6C69DD3BAC}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
