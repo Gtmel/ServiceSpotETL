@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{ED868B6F-6672-42A7-934D-CAC189CB7382}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{E0190ECD-D066-47FF-A55A-9251D0A83517}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -32,54 +32,54 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype"
+              refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
               description="Conversion de données"
-              name="DCNV - year-cost-calltype"
+              name="DCNV - Resizing &amp; Retyping"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Inputs[Entrée de conversion de données]"
+                  refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données]"
                   name="Entrée de conversion de données">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Inputs[Entrée de conversion de données].Columns[Cost_per_min]"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données].Columns[Cost_per_min]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Cost_per_min"
-                      lineageId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]" />
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Inputs[Entrée de conversion de données].Columns[Year]"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données].Columns[Year]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Year"
-                      lineageId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Year]" />
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Year]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Inputs[Entrée de conversion de données].Columns[Call Type]"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données].Columns[Call Type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call Type"
-                      lineageId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Call Type]" />
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données]"
+                  refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données]"
                   exclusionGroup="1"
                   name="Sortie de conversion de données"
-                  synchronousInputId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Inputs[Entrée de conversion de données]">
+                  synchronousInputId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]"
                       name="Cost_per_min_R"
                       precision="4"
                       scale="2"
@@ -89,7 +89,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
@@ -97,11 +97,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Year_R]"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Year_R]"
                       dataType="ui4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Year_R]"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Year_R]"
                       name="Year_R"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -109,7 +109,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Year]}</property>
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Year]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
@@ -117,24 +117,24 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Call Type_R]"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallType_R]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="20"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Call Type_R]"
-                      name="Call Type_R"
+                      length="25"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallType_R]"
+                      name="CallType_R"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Call Type]}</property>
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]}</property>
                         <property
                           dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
                           name="FastParse">false</property>
                       </properties>
                     </outputColumn>
@@ -142,22 +142,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie d'erreur de conversion de données]"
+                  refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie d'erreur de conversion de données]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de conversion de données"
-                  synchronousInputId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Inputs[Entrée de conversion de données]">
+                  synchronousInputId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -166,27 +166,27 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS Call_charges\DER -  cost replace"
+              refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
               description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="DER -  cost replace"
+              name="DER -  Cost remove per min"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS Call_charges\DER -  cost replace.Inputs[Entrée de colonne dérivée]"
+                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]"
                   description="Entrée de la transformation de colonnes dérivées"
                   name="Entrée de colonne dérivée">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\DER -  cost replace.Inputs[Entrée de colonne dérivée].Columns[Cost_per_min]"
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée].Columns[Cost_per_min]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Cost_per_min"
                       errorOrTruncationOperation="Calcul"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]"
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -194,7 +194,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Expression de colonne dérivée"
-                          name="Expression">[REPLACE]([REPLACE](#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}," / min",""),".",",")</property>
+                          name="Expression">[REPLACE]([REPLACE](#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}," / min",""),".",",")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -209,31 +209,31 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS Call_charges\DER -  cost replace.Outputs[Sortie de colonne dérivée]"
+                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée]"
                   description="Sortie par défaut de la transformation de colonnes dérivées"
                   exclusionGroup="1"
                   name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS Call_charges\DER -  cost replace.Inputs[Entrée de colonne dérivée]">
+                  synchronousInputId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - ODS Call_charges\DER -  cost replace.Outputs[Sortie d'erreur de colonne dérivée]"
+                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée]"
                   description="Sortie d'erreur de la transformation de colonnes dérivées"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS Call_charges\DER -  cost replace.Inputs[Entrée de colonne dérivée]">
+                  synchronousInputId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DER -  cost replace.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_charges\DER -  cost replace.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DER -  cost replace.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_charges\DER -  cost replace.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -318,15 +318,7 @@
                       cachedDataType="ui4"
                       cachedName="Year_R"
                       externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Year]"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Year_R]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[Call Type_R]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Call Type_R"
-                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type]"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Call Type_R]" />
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Year_R]" />
                     <inputColumn
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[Cost_per_min_R]"
                       cachedDataType="numeric"
@@ -334,26 +326,34 @@
                       cachedPrecision="4"
                       cachedScale="2"
                       externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Cost_per_min]"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]" />
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[CallType_R]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="CallType_R"
+                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType]"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallType_R]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Call Type" />
-                    <externalMetadataColumn
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Year]"
-                      dataType="i8"
+                      dataType="i4"
                       name="Year" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Cost_per_min]"
                       dataType="numeric"
                       name="Cost_per_min"
-                      precision="18"
+                      precision="4"
                       scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="CallType" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -593,19 +593,19 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS Call_charges\UPVT  -call charges"
+              refId="Package\DFT - ODS Call_charges\UPVT - Call charges"
               componentClassID="Microsoft.UnPivot"
               contactInfo="Supprimer le tableau croisé dynamique;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
               description="Développe un flux de données non normalisé en une version plus normalisée. Les valeurs provenant de plusieurs colonnes d'un même enregistrement sont développées en plusieurs enregistrements dans une colonne unique. Par exemple, développez une table qui répertorie les résultats d'athlétisme avec une colonne pour chaque discipline en plusieurs enregistrements et une seule colonne de résultats."
-              name="UPVT  -call charges">
+              name="UPVT - Call charges">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Inputs[Entrée Unpivot]"
+                  refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Inputs[Entrée Unpivot]"
                   hasSideEffects="true"
                   name="Entrée Unpivot">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Inputs[Entrée Unpivot].Columns[Call Charges (2018)]"
+                      refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Inputs[Entrée Unpivot].Columns[Call Charges (2018)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
@@ -616,7 +616,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="ID de traçabilité de la colonne de sortie qui doit recevoir la valeur de cette colonne d'entrée. Ou -1 si la valeur de la colonne n'est pas utilisée dans les lignes de sortie."
-                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
+                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
                         <property
                           dataType="System.String"
                           description="Spécifie la valeur enregistrée dans la colonne PivotKey de la ligne de sortie."
@@ -625,7 +625,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Inputs[Entrée Unpivot].Columns[Call Charges (2019)]"
+                      refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Inputs[Entrée Unpivot].Columns[Call Charges (2019)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
@@ -636,7 +636,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="ID de traçabilité de la colonne de sortie qui doit recevoir la valeur de cette colonne d'entrée. Ou -1 si la valeur de la colonne n'est pas utilisée dans les lignes de sortie."
-                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
+                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
                         <property
                           dataType="System.String"
                           description="Spécifie la valeur enregistrée dans la colonne PivotKey de la ligne de sortie."
@@ -645,7 +645,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Inputs[Entrée Unpivot].Columns[Call Charges (2020)]"
+                      refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Inputs[Entrée Unpivot].Columns[Call Charges (2020)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
@@ -656,7 +656,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="ID de traçabilité de la colonne de sortie qui doit recevoir la valeur de cette colonne d'entrée. Ou -1 si la valeur de la colonne n'est pas utilisée dans les lignes de sortie."
-                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
+                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
                         <property
                           dataType="System.String"
                           description="Spécifie la valeur enregistrée dans la colonne PivotKey de la ligne de sortie."
@@ -665,7 +665,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Inputs[Entrée Unpivot].Columns[Call Charges (2021)]"
+                      refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Inputs[Entrée Unpivot].Columns[Call Charges (2021)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
@@ -676,7 +676,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="ID de traçabilité de la colonne de sortie qui doit recevoir la valeur de cette colonne d'entrée. Ou -1 si la valeur de la colonne n'est pas utilisée dans les lignes de sortie."
-                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
+                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]}</property>
                         <property
                           dataType="System.String"
                           description="Spécifie la valeur enregistrée dans la colonne PivotKey de la ligne de sortie."
@@ -685,7 +685,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Inputs[Entrée Unpivot].Columns[Call Type ]"
+                      refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Inputs[Entrée Unpivot].Columns[Call Type ]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
@@ -696,7 +696,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="ID de traçabilité de la colonne de sortie qui doit recevoir la valeur de cette colonne d'entrée. Ou -1 si la valeur de la colonne n'est pas utilisée dans les lignes de sortie."
-                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Call Type]}</property>
+                          name="DestinationColumn">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]}</property>
                         <property
                           dataType="System.Null"
                           description="Spécifie la valeur enregistrée dans la colonne PivotKey de la ligne de sortie."
@@ -710,14 +710,14 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot]"
+                  refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot]"
                   name="Sortie Unpivot">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Year]"
+                      refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Year]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Year]"
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Year]"
                       name="Year">
                       <properties>
                         <property
@@ -727,11 +727,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]"
+                      refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]"
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]"
                       name="Cost_per_min">
                       <properties>
                         <property
@@ -741,11 +741,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Call Type]"
+                      refId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot].Columns[Call Type]"
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]"
                       name="Call Type">
                       <properties>
                         <property
@@ -763,24 +763,24 @@
           <paths>
             <path
               refId="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
-              endId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Inputs[Entrée de conversion de données]"
+              endId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données]"
               name="Sortie de colonne dérivée"
-              startId="Package\DFT - ODS Call_charges\DER -  cost replace.Outputs[Sortie de colonne dérivée]" />
+              startId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée]" />
             <path
               refId="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
               endId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB]"
               name="Sortie de conversion de données"
-              startId="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype.Outputs[Sortie de conversion de données]" />
+              startId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données]" />
             <path
               refId="Package\DFT - ODS Call_charges.Paths[Sortie de source OLE DB]"
-              endId="Package\DFT - ODS Call_charges\UPVT  -call charges.Inputs[Entrée Unpivot]"
+              endId="Package\DFT - ODS Call_charges\UPVT - Call charges.Inputs[Entrée Unpivot]"
               name="Sortie de source OLE DB"
               startId="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges.Outputs[Sortie de source OLE DB]" />
             <path
               refId="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
-              endId="Package\DFT - ODS Call_charges\DER -  cost replace.Inputs[Entrée de colonne dérivée]"
+              endId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]"
               name="Sortie Unpivot"
-              startId="Package\DFT - ODS Call_charges\UPVT  -call charges.Outputs[Sortie Unpivot]" />
+              startId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -828,7 +828,7 @@
         <NodeLayout
           Size="201,42"
           Id="Package\DFT - ODS Call_charges"
-          TopLeft="124.749994914979,175.263156354675" />
+          TopLeft="124.749994914979,173.263156354675" />
         <NodeLayout
           Size="261,42"
           Id="Package\SQL -TRUNCATE ODS Call Charges"
@@ -839,14 +839,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76.6315779632313"
+              EndConnector="0,74.6315779632313"
               Start="0,0"
-              End="0,69.1315779632313">
+              End="0,67.1315779632313">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.1315779632313" />
+                    End="0,67.1315779632313" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -864,94 +864,28 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="179,42"
+          Id="Package\DFT - ODS Call_charges\UPVT - Call charges"
+          TopLeft="159.624987231568,95.6491222435804" />
+        <NodeLayout
           Size="226,42"
           Id="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges"
-          TopLeft="145.124996284023,348.842102333284" />
+          TopLeft="139.124996284023,331.842102333284" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\DFT - ODS Call_charges\DER -  Cost remove per min"
+          TopLeft="145.124997848646,176.894735602543" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping"
+          TopLeft="142.749995585531,255.157892670906" />
         <NodeLayout
           Size="219,42"
           Id="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges"
-          TopLeft="146.249993462116,7.52631570683622" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\DFT - ODS Call_charges\DER -  cost replace"
-          TopLeft="169.124997848646,177.894735602543" />
-        <NodeLayout
-          Size="206,42"
-          Id="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype"
-          TopLeft="153.749995585531,267.157892670906" />
-        <NodeLayout
-          Size="175,43"
-          Id="Package\DFT - ODS Call_charges\UPVT  -call charges"
-          TopLeft="169.624987231568,95.6491222435804" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie de source OLE DB]"
-          TopLeft="256.437490346842,49.5263157068362">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.1228065367442"
-              Start="0,0"
-              End="0,38.6228065367442">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.6228065367442" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
-          TopLeft="257.437495934777,309.157892670906">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.684209662378"
-              Start="0,0"
-              End="0,32.184209662378">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.184209662378" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
-          TopLeft="256.437496717088,219.894735602543">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.263157068363"
-              Start="0,0"
-              End="0,39.763157068363">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.763157068363" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="144.249993462116,11.5263157068362" />
         <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
-          TopLeft="256.624992540107,138.64912224358">
+          TopLeft="251.124992540107,137.64912224358">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -963,6 +897,72 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,31.7456133589626" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie de source OLE DB]"
+          TopLeft="251.437490346842,53.5263157068362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.1228065367442"
+              Start="0,0"
+              End="0,34.6228065367442">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.6228065367442" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
+          TopLeft="252.687496717088,218.894735602543">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.263157068363"
+              Start="0,0"
+              End="0,28.763157068363">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.763157068363" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
+          TopLeft="252.187495934777,297.157892670906">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.684209662378"
+              Start="0,0"
+              End="0,27.184209662378">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.184209662378" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
