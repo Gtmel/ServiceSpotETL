@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{E0190ECD-D066-47FF-A55A-9251D0A83517}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{26EA3656-9441-4930-B6BF-376C88B46F8C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -57,12 +57,11 @@
                       cachedName="Year"
                       lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Year]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données].Columns[Call Type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données].Columns[Call_Type Trim]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Call Type"
-                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]" />
+                      cachedName="Call_Type Trim"
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -131,7 +130,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]}</property>
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -203,6 +202,13 @@
                           name="FriendlyExpression">REPLACE(REPLACE(Cost_per_min," / min",""),".",",")</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -214,6 +220,31 @@
                   exclusionGroup="1"
                   name="Sortie de colonne dérivée"
                   synchronousInputId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]"
+                      name="Call_Type Trim"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM([Call Type])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -928,28 +959,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
-          TopLeft="252.687496717088,218.894735602543">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.263157068363"
-              Start="0,0"
-              End="0,28.763157068363">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.763157068363" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
           TopLeft="252.187495934777,297.157892670906">
           <EdgeLayout.Curve>
@@ -963,6 +972,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,27.184209662378" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
+          TopLeft="252.687496717088,218.894735602543">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.263157068363"
+              Start="0,0"
+              End="0,28.763157068363">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.763157068363" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
