@@ -11,10 +11,48 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="ODS_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{5F1733FF-162C-4370-A8D6-0E663EABB403}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{A4DD2492-0DB4-4B83-A9ED-38CEF15D0E7C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7B82A818-5C8A-4E70-82E1-8D16CDFE0991}"
+      DTS:ObjectName="localhost.SS_ODS 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Employee-{7B82A818-5C8A-4E70-82E1-8D16CDFE0991}localhost.SS_ODS 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{14B6F69A-C2A5-4D83-A952-6D0D7BAFBDAB}"
+      DTS:ObjectName="localhost.SS_ODS 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Employee-{14B6F69A-C2A5-4D83-A952-6D0D7BAFBDAB}localhost.SS_ODS 2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8B423A37-FBFC-40C4-9E15-37F9874CEE8D}"
+      DTS:ObjectName="localhost.SS_ODS 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Employee-{8B423A37-FBFC-40C4-9E15-37F9874CEE8D}localhost.SS_ODS 3;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -735,8 +773,8 @@ where [refTable].[StateCD] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT - ODS Employee\OLE_DST - ODS Employee.Connections[OleDbConnection]"
-                  connectionManagerID="{9398B56B-B107-4951-BE94-45BC59FDF1F8}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.SS_ODS]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.SS_ODS 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.SS_ODS 3]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1096,7 +1134,7 @@ where [refTable].[StateCD] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9398B56B-B107-4951-BE94-45BC59FDF1F8}"
+          SQLTask:Connection="{A1D7A931-EB8F-407E-866C-1C8179DADA26}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Employee" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1124,13 +1162,13 @@ where [refTable].[StateCD] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="233,42"
-          Id="Package\SQL - Truncate ODS Employee"
-          TopLeft="155,32" />
-        <NodeLayout
           Size="186,42"
           Id="Package\DFT - ODS Employee"
           TopLeft="175,136" />
+        <NodeLayout
+          Size="233.333333333334,42"
+          Id="Package\SQL - Truncate ODS Employee"
+          TopLeft="155,32" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="269.75,74">
@@ -1162,9 +1200,29 @@ where [refTable].[StateCD] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="213,42"
+          Size="213.333333333334,42"
           Id="Package\DFT - ODS Employee\OLE_SRC - STA Employee"
           TopLeft="145,43" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\DFT - ODS Employee\DCNV - State to STR"
+          TopLeft="159,256" />
+        <NodeLayout
+          Size="165.333333333334,42"
+          Id="Package\DFT - ODS Employee\LKP - STA States"
+          TopLeft="165,324" />
+        <NodeLayout
+          Size="130.666666666667,42"
+          Id="Package\DFT - ODS Employee\DER - Site"
+          TopLeft="180,184" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\DFT - ODS Employee\OLE_DST - ODS Employee"
+          TopLeft="140,473" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\DFT - ODS Employee\DCNV - Resizing"
+          TopLeft="165,405" />
         <NodeLayout
           Size="156,42"
           Id="Package\DFT - ODS Employee\DER - State CD"
@@ -1191,44 +1249,6 @@ where [refTable].[StateCD] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\DFT - ODS Employee\LKP - STA States"
-          TopLeft="165,324" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\DFT - ODS Employee\DCNV - State to STR"
-          TopLeft="159,256" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output]"
-          TopLeft="248.75,298">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26"
-              Start="0,0"
-              End="0,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="214,42"
-          Id="Package\DFT - ODS Employee\OLE_DST - ODS Employee"
-          TopLeft="140,473" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\DFT - ODS Employee\DCNV - Resizing"
-          TopLeft="165,405" />
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Lookup Match Output]"
           TopLeft="246.75,366">
@@ -1254,19 +1274,19 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output1]"
-          TopLeft="246.5,447">
+          Id="Package\DFT - ODS Employee.Paths[Derived Column Output1]"
+          TopLeft="247.75,226">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26"
+              EndConnector="0,30"
               Start="0,0"
-              End="0,18.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1275,10 +1295,6 @@ where [refTable].[StateCD] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="131,42"
-          Id="Package\DFT - ODS Employee\DER - Site"
-          TopLeft="180,184" />
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Derived Column Output]"
           TopLeft="247.25,155">
@@ -1302,19 +1318,41 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Derived Column Output1]"
-          TopLeft="247.75,226">
+          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output1]"
+          TopLeft="246.5,447">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30"
+              EndConnector="0,26"
               Start="0,0"
-              End="0,22.5">
+              End="0,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output]"
+          TopLeft="248.75,298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1345,7 +1383,7 @@ where [refTable].[StateCD] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1355,7 +1393,7 @@ where [refTable].[StateCD] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

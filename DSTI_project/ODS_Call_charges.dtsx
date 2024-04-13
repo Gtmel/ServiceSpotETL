@@ -15,6 +15,20 @@
   DTS:VersionGUID="{26EA3656-9441-4930-B6BF-376C88B46F8C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E07E185F-6235-4FFC-93BC-BD53EDB9BCC5}"
+      DTS:ObjectName="localhost.SS_ODS 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Call_charges-{E07E185F-6235-4FFC-93BC-BD53EDB9BCC5}localhost.SS_ODS 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -331,7 +345,7 @@
               <connections>
                 <connection
                   refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Connections[OleDbConnection]"
-                  connectionManagerID="{9398B56B-B107-4951-BE94-45BC59FDF1F8}:external"
+                  connectionManagerID="{A1D7A931-EB8F-407E-866C-1C8179DADA26}:external"
                   connectionManagerRefId="Project.ConnectionManagers[localhost.SS_ODS]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
@@ -829,7 +843,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9398B56B-B107-4951-BE94-45BC59FDF1F8}"
+          SQLTask:Connection="{A1D7A931-EB8F-407E-866C-1C8179DADA26}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Call_charges" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -857,11 +871,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="201,42"
+          Size="201.333333333334,42"
           Id="Package\DFT - ODS Call_charges"
           TopLeft="124.749994914979,173.263156354675" />
         <NodeLayout
-          Size="261,42"
+          Size="261.333333333334,42"
           Id="Package\SQL -TRUNCATE ODS Call Charges"
           TopLeft="94.99999307096,56.6315783914437" />
         <EdgeLayout

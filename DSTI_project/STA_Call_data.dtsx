@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{0CC0F61D-ABE9-4020-85E4-8DF5DC39971D}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{ADD84684-D5E9-48AD-9EDF-965E86BFD155}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\kacik\Documents\data\Data 2018.csv">
+          DTS:ConnectionString="C:\Users\kacik\Documents\data\Calls Data\Data 2018.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -110,7 +110,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Filepath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Users\kacik\Documents\data\Data 2018.csv</DTS:VariableValue>
+        DTS:DataType="8">C:\Users\kacik\Documents\data\Calls Data\Data 2018.csv</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -131,7 +131,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Calls Data" />
+              Folder="C:\Users\kacik\Documents\data\Calls Data" />
             <FEFEProperty
               FileSpec="*.csv" />
             <FEFEProperty
@@ -435,7 +435,7 @@
                     <property
                       dataType="System.String"
                       description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                      name="OpenRowset">[Call_data]</property>
+                      name="OpenRowset">[dbo].[Call_data]</property>
                     <property
                       dataType="System.String"
                       description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
@@ -622,7 +622,36 @@
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FELC - Call Data folder\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2BAAAC8C-6959-4476-9117-B83C5088F1BA}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"INSERT INTO FileInfo values ('"+ @[User::Filepath] +"',"+(DT_WSTR,12) @[User::Cnt]  +",GETDATE())"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F34027F6-38C3-41FA-B46D-4E21805409C1}"
+              SQLTask:SqlStatementSource="INSERT INTO FileInfo values ('C:\Users\kacik\Documents\data\Calls Data\Data 2018.csv',0,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FELC - Call Data folder.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{CE2BD70E-9953-4D44-88F1-2099D6878B44}"
+          DTS:From="Package\FELC - Call Data folder\DFT_STA_Call data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FELC - Call Data folder\Execute SQL Task" />
+      </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
@@ -671,36 +700,86 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="227,43"
+          Size="226.666666666667,42.6666666666667"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data"
           TopLeft="42.5416567480815,24.4736820093649" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="307,123"
-          Size="307,166"
-          Id="Package\FELC - Call Data folder"
-          TopLeft="151.374990193174,160.684209234166" />
         <NodeLayout
-          Size="219,42"
-          Id="Package\SQL - TRUNCATE Call Data"
-          TopLeft="189.000000670552,46.1578943837548" />
+          Size="168,42.6666666666667"
+          Id="Package\FELC - Call Data folder\Execute SQL Task"
+          TopLeft="97.3749892991044,101.298242774311" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="301.687495431863,88.1578943837548">
+          Id="Package\FELC - Call Data folder.PrecedenceConstraints[Constraint]"
+          TopLeft="155.874990081415,67.1403486760316">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,72.5263148504112"
+              EndConnector="25.4999992176895,34.1578940982799"
               Start="0,0"
-              End="0,65.0263148504112">
+              End="25.4999992176895,26.6578940982799">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.0263148504112" />
+                    End="0,13.07894704914" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.07894704914"
+                    Point2="0,17.07894704914"
+                    Point3="4,17.07894704914" />
+                  <mssgle:LineSegment
+                    End="21.4999992176895,17.07894704914" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.4999992176895,17.07894704914"
+                    Point2="25.4999992176895,17.07894704914"
+                    Point3="25.4999992176895,21.07894704914" />
+                  <mssgle:LineSegment
+                    End="25.4999992176895,26.6578940982799" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="312,198.666666666667"
+          Size="312,242"
+          Id="Package\FELC - Call Data folder"
+          TopLeft="141.999990612269,114.842104474345" />
+        <NodeLayout
+          Size="218.666666666667,42"
+          Id="Package\SQL - TRUNCATE Call Data"
+          TopLeft="169.625001536682,22.8947367444428" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="278.958334870015,64.8947367444428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.0416557422537,49.9473677299022"
+              Start="0,0"
+              End="19.0416557422537,42.4473677299022">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9736838649511" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.9736838649511"
+                    Point2="0,24.9736838649511"
+                    Point3="4,24.9736838649511" />
+                  <mssgle:LineSegment
+                    End="15.0416557422537,24.9736838649511" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.0416557422537,24.9736838649511"
+                    Point2="19.0416557422537,24.9736838649511"
+                    Point3="19.0416557422537,28.9736838649511" />
+                  <mssgle:LineSegment
+                    End="19.0416557422537,42.4473677299022" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -716,17 +795,17 @@
     design-time-name="Package\FELC - Call Data folder\DFT_STA_Call data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="190,43"
+          Size="190,42.6666666666667"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data\FF_SRC- Call data"
           TopLeft="174.999992176891,42.4035083136676" />
         <NodeLayout
-          Size="221,43"
+          Size="221.333333333334,42.6666666666667"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data\OLE_DST -STA Call data"
           TopLeft="157.999989494682,210.421050310218" />
         <NodeLayout
-          Size="156,43"
+          Size="156,42.6666666666667"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data\CNT - Rows"
           TopLeft="193.124988013879,126.736840790576" />
         <EdgeLayout
@@ -748,7 +827,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -770,7 +851,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

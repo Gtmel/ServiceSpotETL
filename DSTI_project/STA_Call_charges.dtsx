@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{20D724F9-DCD2-4FE0-8FE9-3DD06F6EA4EE}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{2CE55FCC-2FEF-4254-B9D9-973155742819}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Call Charges.csv">
+          DTS:ConnectionString="C:\Users\kacik\Documents\data\Call Charges.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Type "
-              DTS:DTSID="{2DFBAACB-9191-4EC4-9262-9C28883E346B}"
+              DTS:DTSID="{7D4D9A53-D946-4675-A7B1-CA991ECA1E9C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2018)"
-              DTS:DTSID="{0C39958C-560A-49DA-B3A2-0412086078C8}"
+              DTS:DTSID="{3EE2DA21-00D3-4D9A-99D0-CB957DA8B122}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2019)"
-              DTS:DTSID="{8858726E-F02B-45A6-8E14-5F27C4B344D6}"
+              DTS:DTSID="{A1045152-801A-4BC3-8449-659C8F061F6B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2020)"
-              DTS:DTSID="{1820FC46-C242-4536-AE6C-17EE6433DAC0}"
+              DTS:DTSID="{CACD72EE-318A-44E7-96B2-D2D9896D1725}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,10 +77,22 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2021)"
-              DTS:DTSID="{4F1EF104-5C9D-4501-9CA5-3C7B5B7309CD}"
+              DTS:DTSID="{31F9D348-DD4A-49F1-9A54-3006B6162067}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.A23_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{81BD6E5F-04A9-4650-A1B4-97F35342A64E}"
+      DTS:ObjectName="localhost.A23_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=A23_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-STA_Call_charges-{81BD6E5F-04A9-4650-A1B4-97F35342A64E}localhost.A23_STA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -534,7 +546,7 @@
           Id="Package\DFT - STA Call_charges"
           TopLeft="162.874994104728,133.578945978609" />
         <NodeLayout
-          Size="235,42"
+          Size="234.666666666667,42"
           Id="Package\SQL -TRUNCATE Call_charges"
           TopLeft="138.124993825332,43.1052626846075" />
         <EdgeLayout
@@ -572,7 +584,7 @@
           Id="Package\DFT - STA Call_charges\OLE_DST - STA Call charges"
           TopLeft="132.749989103526,173.578945978609" />
         <NodeLayout
-          Size="206,43"
+          Size="206,42.6666666666667"
           Id="Package\DFT - STA Call_charges\FF_SRC Calls charges"
           TopLeft="137.749993573874,53.6315786769185" />
         <EdgeLayout

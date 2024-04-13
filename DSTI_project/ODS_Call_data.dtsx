@@ -15,6 +15,20 @@
   DTS:VersionGUID="{D09571DF-D179-4DAB-AC3F-D858107F32D7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.SS_ADM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DC4FDEF8-4FB9-4C1E-9BEA-A8D751B58A35}"
+      DTS:ObjectName="localhost.SS_ADM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ADM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Call_data-{DC4FDEF8-4FB9-4C1E-9BEA-A8D751B58A35}localhost.SS_ADM;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -945,7 +959,7 @@ where [refTable].[CallTypeID] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Connections[OleDbConnection]"
-                  connectionManagerID="{9398B56B-B107-4951-BE94-45BC59FDF1F8}:external"
+                  connectionManagerID="{A1D7A931-EB8F-407E-866C-1C8179DADA26}:external"
                   connectionManagerRefId="Project.ConnectionManagers[localhost.SS_ODS]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
@@ -1138,8 +1152,8 @@ where [refTable].[CallTypeID] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Connections[OleDbConnection]"
-                  connectionManagerID="{4B90492A-6DD7-46B4-958D-CD752F21F988}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost SS_ADM]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.SS_ADM]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.SS_ADM]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
               </connections>
@@ -1529,7 +1543,7 @@ where [refTable].[CallTypeID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9398B56B-B107-4951-BE94-45BC59FDF1F8}"
+          SQLTask:Connection="{A1D7A931-EB8F-407E-866C-1C8179DADA26}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Call_data" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1557,7 +1571,7 @@ where [refTable].[CallTypeID] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="183,42"
+          Size="182.666666666667,42"
           Id="Package\DFT - ODS Call_data"
           TopLeft="212.499989382923,174.052629843561" />
         <NodeLayout
@@ -1623,7 +1637,15 @@ where [refTable].[CallTypeID] = ?</property>
           Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
           TopLeft="115,188" />
         <NodeLayout
-          Size="185,42"
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DER-Date rejects"
+          TopLeft="487.999985456467,163.999995112419" />
+        <NodeLayout
+          Size="225.333333333334,42"
+          Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
+          TopLeft="117,195" />
+        <NodeLayout
+          Size="185.333333333334,42"
           Id="Package\DFT - ODS Call_data\DCNV - Convert to int"
           TopLeft="133.999993287027,271.749994026987" />
         <NodeLayout
@@ -1837,7 +1859,9 @@ where [refTable].[CallTypeID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-12.0082469558715,-16.3349609375,183.016484375,10.3349609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
