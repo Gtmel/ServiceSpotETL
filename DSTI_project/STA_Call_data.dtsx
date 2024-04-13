@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{ADD84684-D5E9-48AD-9EDF-965E86BFD155}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{138E9F9F-F880-42BC-8624-7621CD3F4DF2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -131,7 +131,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\kacik\Documents\data\Calls Data" />
+              Folder="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Calls Data" />
             <FEFEProperty
               FileSpec="*.csv" />
             <FEFEProperty
@@ -623,13 +623,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FELC - Call Data folder\Execute SQL Task"
+          DTS:refId="Package\FELC - Call Data folder\SQL - Insert FileInfo"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{2BAAAC8C-6959-4476-9117-B83C5088F1BA}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Execute SQL Task"
+          DTS:ObjectName="SQL - Insert FileInfo"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
@@ -650,7 +650,7 @@
           DTS:From="Package\FELC - Call Data folder\DFT_STA_Call data"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\FELC - Call Data folder\Execute SQL Task" />
+          DTS:To="Package\FELC - Call Data folder\SQL - Insert FileInfo" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -702,39 +702,27 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="226.666666666667,42.6666666666667"
+          Size="227,43"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data"
           TopLeft="42.5416567480815,24.4736820093649" />
         <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\FELC - Call Data folder\Execute SQL Task"
-          TopLeft="97.3749892991044,101.298242774311" />
+          Size="177,42"
+          Id="Package\FELC - Call Data folder\SQL - Insert FileInfo"
+          TopLeft="69.3749892991044,105.298242774311" />
         <EdgeLayout
           Id="Package\FELC - Call Data folder.PrecedenceConstraints[Constraint]"
-          TopLeft="155.874990081415,67.1403486760316">
+          TopLeft="156.958323023593,67.4736820093649">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="25.4999992176895,34.1578940982799"
+              EndConnector="0,37.8245607649461"
               Start="0,0"
-              End="25.4999992176895,26.6578940982799">
+              End="0,30.3245607649461">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.07894704914" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.07894704914"
-                    Point2="0,17.07894704914"
-                    Point3="4,17.07894704914" />
-                  <mssgle:LineSegment
-                    End="21.4999992176895,17.07894704914" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.4999992176895,17.07894704914"
-                    Point2="25.4999992176895,17.07894704914"
-                    Point3="25.4999992176895,21.07894704914" />
-                  <mssgle:LineSegment
-                    End="25.4999992176895,26.6578940982799" />
+                    End="0,30.3245607649461" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -746,40 +734,28 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="312,198.666666666667"
+          PanelSize="312,199"
           Size="312,242"
           Id="Package\FELC - Call Data folder"
           TopLeft="141.999990612269,114.842104474345" />
         <NodeLayout
-          Size="218.666666666667,42"
+          Size="219,42"
           Id="Package\SQL - TRUNCATE Call Data"
-          TopLeft="169.625001536682,22.8947367444428" />
+          TopLeft="188.625001536682,24.8947367444428" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="278.958334870015,64.8947367444428">
+          TopLeft="298.062496074476,66.8947367444428">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.0416557422537,49.9473677299022"
+              EndConnector="0,47.9473677299022"
               Start="0,0"
-              End="19.0416557422537,42.4473677299022">
+              End="0,40.4473677299022">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.9736838649511" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.9736838649511"
-                    Point2="0,24.9736838649511"
-                    Point3="4,24.9736838649511" />
-                  <mssgle:LineSegment
-                    End="15.0416557422537,24.9736838649511" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.0416557422537,24.9736838649511"
-                    Point2="19.0416557422537,24.9736838649511"
-                    Point3="19.0416557422537,28.9736838649511" />
-                  <mssgle:LineSegment
-                    End="19.0416557422537,42.4473677299022" />
+                    End="0,40.4473677299022" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{D09571DF-D179-4DAB-AC3F-D858107F32D7}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{1E3A6674-13DE-422F-BB5E-CB5B0A2B39F6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -225,6 +225,13 @@
                       cachedLength="255"
                       cachedName="WaitTime"
                       lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Inputs[Entrée de conversion de données].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -273,6 +280,26 @@
                         <property
                           dataType="System.Boolean"
                           description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]"
+                      name="Call Type_int"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
                           name="FastParse">false</property>
                       </properties>
                     </outputColumn>
@@ -418,12 +445,11 @@
                       cachedName="EmployeeID"
                       lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[EmployeeID]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - resizing.Inputs[Entrée de conversion de données].Columns[CallTypeLabel]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="CallTypeLabel"
-                      lineageId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Match Output].Columns[CallTypeLabel]" />
+                      refId="Package\DFT - ODS Call_data\DCNV - resizing.Inputs[Entrée de conversion de données].Columns[SLA]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="SLA"
+                      lineageId="Package\DFT - ODS Call_data\DER - SLA.Outputs[Derived Column Output].Columns[SLA]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -458,21 +484,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données].Columns[CallTypeLabel_R]"
+                      refId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données].Columns[SLA_R]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="25"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données].Columns[CallTypeLabel_R]"
-                      name="CallTypeLabel_R"
+                      length="10"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données].Columns[SLA_R]"
+                      name="SLA_R"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Match Output].Columns[CallTypeLabel]}</property>
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_data\DER - SLA.Outputs[Derived Column Output].Columns[SLA]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -739,168 +765,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS Call_data\LKP - CallType"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="LKP - CallType"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Call_type]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Call_type]) [refTable]
-where [refTable].[CallTypeID] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CallTypeID" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CallTypeLabel" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\DFT - ODS Call_data\LKP - CallType.Connections[OleDbConnection]"
-                  connectionManagerID="{F34027F6-38C3-41FA-B46D-4E21805409C1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost SS_STA]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS Call_data\LKP - CallType.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS Call_data\LKP - CallType.Inputs[Lookup Input].Columns[Call Type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Call Type"
-                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">CallTypeID</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\DFT - ODS Call_data\LKP - CallType.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Match Output].Columns[CallTypeLabel]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="255"
-                      lineageId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Match Output].Columns[CallTypeLabel]"
-                      name="CallTypeLabel"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">CallTypeLabel</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\DFT - ODS Call_data\LKP - CallType.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\DFT - ODS Call_data\LKP - CallType.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
@@ -1011,20 +875,19 @@ where [refTable].[CallTypeID] = ?</property>
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTime]"
                       lineageId="Package\DFT - ODS Call_data\DCNV - Divide Date and Time.Outputs[Data Conversion Output].Columns[CallTime]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[CallTypeLabel_R]"
+                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[Call Type_int]"
+                      cachedDataType="ui4"
+                      cachedName="Call Type_int"
+                      externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[SLA_R]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="25"
-                      cachedName="CallTypeLabel_R"
-                      externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType]"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données].Columns[CallTypeLabel_R]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[SLA]"
-                      cachedDataType="wstr"
                       cachedLength="10"
-                      cachedName="SLA"
+                      cachedName="SLA_R"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[SLA]"
-                      lineageId="Package\DFT - ODS Call_data\DER - SLA.Outputs[Derived Column Output].Columns[SLA]" />
+                      lineageId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données].Columns[SLA_R]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1036,11 +899,11 @@ where [refTable].[CallTypeID] = ?</property>
                       name="EmployeeID" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallDuration]"
-                      dataType="i8"
+                      dataType="i4"
                       name="CallDuration" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[WaitTime]"
-                      dataType="i8"
+                      dataType="i4"
                       name="WaitTime" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallAbandoned]"
@@ -1052,18 +915,18 @@ where [refTable].[CallTypeID] = ?</property>
                       name="CallDate" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTime]"
-                      dataType="dbTimeStamp"
-                      name="CallTime" />
+                      dataType="dbTime2"
+                      name="CallTime"
+                      scale="7" />
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="25"
-                      name="CallType" />
+                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
+                      dataType="i4"
+                      name="CallTypeID" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[SLA]"
-                      dataType="wstr"
-                      length="10"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
                       name="SLA" />
                   </externalMetadataColumns>
                 </input>
@@ -1483,14 +1346,9 @@ where [refTable].[CallTypeID] = ?</property>
               startId="Package\DFT - ODS Call_data\DCNV - Divide Date and Time.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Derived Column Output]"
-              endId="Package\DFT - ODS Call_data\LKP - CallType.Inputs[Lookup Input]"
+              endId="Package\DFT - ODS Call_data\DCNV - Convert to boolean.Inputs[Entrée de conversion de données]"
               name="Derived Column Output"
               startId="Package\DFT - ODS Call_data\DER - SLA.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - ODS Call_data.Paths[Lookup Match Output]"
-              endId="Package\DFT - ODS Call_data\DCNV - Convert to boolean.Inputs[Entrée de conversion de données]"
-              name="Lookup Match Output"
-              startId="Package\DFT - ODS Call_data\LKP - CallType.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données]"
               endId="Package\DFT - ODS Call_data\DER-Date rejects.Inputs[Entrée de colonne dérivée]"
@@ -1508,19 +1366,19 @@ where [refTable].[CallTypeID] = ?</property>
               startId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Outputs[Sortie de conversion de données]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
-              endId="Package\DFT - ODS Call_data\DCNV - resizing.Inputs[Entrée de conversion de données]"
-              name="Sortie de conversion de données"
-              startId="Package\DFT - ODS Call_data\DCNV - Convert to boolean.Outputs[Sortie de conversion de données]" />
-            <path
-              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
               endId="Package\DFT - ODS Call_data\DER - SLA.Inputs[Derived Column Input]"
               name="Sortie de conversion de données"
               startId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données]" />
             <path
-              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données3]"
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
               endId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB]"
               name="Sortie de conversion de données"
               startId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données3]"
+              endId="Package\DFT - ODS Call_data\DCNV - resizing.Inputs[Entrée de conversion de données]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - ODS Call_data\DCNV - Convert to boolean.Outputs[Sortie de conversion de données]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie de source OLE DB]"
               endId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Inputs[Entrée de conversion de données]"
@@ -1571,7 +1429,7 @@ where [refTable].[CallTypeID] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.666666666667,42"
+          Size="183,42"
           Id="Package\DFT - ODS Call_data"
           TopLeft="212.499989382923,174.052629843561" />
         <NodeLayout
@@ -1609,203 +1467,59 @@ where [refTable].[CallTypeID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="165,42"
+          Id="Package\DFT - ODS Call_data\DER-Date rejects"
+          TopLeft="703,105.5" />
+        <NodeLayout
           Size="158,42"
           Id="Package\DFT - ODS Call_data\DCNV - resizing"
-          TopLeft="147.37499534525,579.434202304343" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\DFT - ODS Call_data\OLE_DST - ODS Call data"
-          TopLeft="117.99999492988,661.315778554724" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Convert to boolean"
-          TopLeft="116.74999499321,501.065778554724" />
-        <NodeLayout
-          Size="236,43"
-          Id="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject"
-          TopLeft="759.999977350236,180.99999460578" />
-        <NodeLayout
-          Size="205,42"
-          Id="Package\DFT - ODS Call_data\OLE_SRC- STA Call data"
-          TopLeft="124.999994367361,24.9999990165234" />
-        <NodeLayout
-          Size="163,43"
-          Id="Package\DFT - ODS Call_data\DER-Date rejects"
-          TopLeft="504.999985456467,157.999995112419" />
-        <NodeLayout
-          Size="225,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
-          TopLeft="115,188" />
-        <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\DFT - ODS Call_data\DER-Date rejects"
-          TopLeft="487.999985456467,163.999995112419" />
-        <NodeLayout
-          Size="225.333333333334,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
-          TopLeft="117,195" />
-        <NodeLayout
-          Size="185.333333333334,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Convert to int"
-          TopLeft="133.999993287027,271.749994026987" />
-        <NodeLayout
-          Size="225,42"
-          Id="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date"
-          TopLeft="117.99999499321,106.999996542931" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie de source OLE DB]"
-          TopLeft="228.999994680286,66.9999990165234">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.9999975264076"
-              Start="0,0"
-              End="0,32.4999975264076">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.4999975264076" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
-          TopLeft="224.56249516923,543.065778554724">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.3684237496191"
-              Start="0,0"
-              End="0,28.8684237496191">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8684237496191" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données]"
-          TopLeft="228.999997496605,148.999996542931">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.000003457069"
-              Start="0,0"
-              End="0,31.500003457069">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.500003457069" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée]"
-          TopLeft="667.999985456467,179.499995112419">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="91.999991893769,22.999999493361"
-              Start="0,0"
-              End="84.499991893769,22.999999493361">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="41.9999959468845,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.9999959468845,0"
-                    Point2="45.9999959468845,0"
-                    Point3="45.9999959468845,4" />
-                  <mssgle:LineSegment
-                    End="45.9999959468845,18.999999493361" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.9999959468845,18.999999493361"
-                    Point2="45.9999959468845,22.999999493361"
-                    Point3="49.9999959468845,22.999999493361" />
-                  <mssgle:LineSegment
-                    End="84.499991893769,22.999999493361" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données]"
-          TopLeft="342.99999499321,127.999996542931">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="161.999990463257,51.499998569488"
-              Start="0,0"
-              End="154.499990463257,51.499998569488">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="76.9999952316285,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76.9999952316285,0"
-                    Point2="80.9999952316285,0"
-                    Point3="80.9999952316285,4" />
-                  <mssgle:LineSegment
-                    End="80.9999952316285,47.499998569488" />
-                  <mssgle:CubicBezierSegment
-                    Point1="80.9999952316285,47.499998569488"
-                    Point2="80.9999952316285,51.499998569488"
-                    Point3="84.9999952316285,51.499998569488" />
-                  <mssgle:LineSegment
-                    End="154.499990463257,51.499998569488" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-10.5082469558715,-16.3349609375,183.016484375,10.3349609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="290.277777777778,648.111111111111" />
         <NodeLayout
           Size="133,42"
           Id="Package\DFT - ODS Call_data\DER - SLA"
-          TopLeft="160,347" />
+          TopLeft="305,441" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\DFT - ODS Call_data\DCNV - Convert to boolean"
+          TopLeft="263.277777777778,546.111111111111" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject"
+          TopLeft="667.5,280.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\DFT - ODS Call_data\OLE_DST - ODS Call data"
+          TopLeft="265.888888888889,750.111111111111" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
+          TopLeft="264,214.5" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\DFT - ODS Call_data\DCNV - Convert to int"
+          TopLeft="285,334.5" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date"
+          TopLeft="272,107.5" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\DFT - ODS Call_data\OLE_SRC- STA Call data"
+          TopLeft="282,5.5" />
         <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Data Conversion Output]"
-          TopLeft="226.999996643513,230">
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de source OLE DB]"
+          TopLeft="384.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.749994026987"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,34.249994026987">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.249994026987" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1816,18 +1530,18 @@ where [refTable].[CallTypeID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
-          TopLeft="226.499996643513,313.749994026987">
+          TopLeft="369.833333333333,690.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.250005973013"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,25.750005973013">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.750005973013" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1836,72 +1550,154 @@ where [refTable].[CallTypeID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\DFT - ODS Call_data\LKP - CallType"
-          TopLeft="146.75,420.350763016158" />
         <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Derived Column Output]"
-          TopLeft="224.875,389">
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
+          TopLeft="374.5,376.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.350763016158"
+              EndConnector="0,64.5"
               Start="0,0"
-              End="0,23.850763016158">
+              End="0,57">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.850763016158" />
+                    End="0,57" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données]"
+          TopLeft="380.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée]"
+          TopLeft="786.5,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,133"
+              Start="0,0"
+              End="0,125.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,125.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données]"
+          TopLeft="497,127.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="206,0"
+              Start="0,0"
+              End="198.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="198.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-12.0082469558715,-16.3349609375,183.016484375,10.3349609375"
+              BoundingBox="7.7417578125,5,183.016484375,10.3349609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Lookup Match Output]"
-          TopLeft="222.999997496605,462.350763016158">
+          Id="Package\DFT - ODS Call_data.Paths[Data Conversion Output]"
+          TopLeft="377,256.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.7150155385659"
+              EndConnector="0,78"
               Start="0,0"
-              End="0,31.2150155385659">
+              End="0,70.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.2150155385659" />
+                    End="0,70.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.80282026928296,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Derived Column Output]"
+          TopLeft="370.388888888889,483">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.1111111111111"
+              Start="0,0"
+              End="0,55.6111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.6111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données3]"
-          TopLeft="224.437495137565,621.434202304343">
+          TopLeft="369.277777777778,588.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.881576250381"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,32.381576250381">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.381576250381" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1914,7 +1710,7 @@ where [refTable].[CallTypeID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Call_data\OLE_DST - ODS Call data">
+    design-time-name="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1927,7 +1723,7 @@ where [refTable].[CallTypeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject">
+    design-time-name="Package\DFT - ODS Call_data\OLE_DST - ODS Call data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1949,29 +1745,6 @@ where [refTable].[CallTypeID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Call_data\LKP - CallType">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Call_type]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

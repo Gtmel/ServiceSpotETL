@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{26EA3656-9441-4930-B6BF-376C88B46F8C}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{C471AB29-1283-4CE3-BA8C-947E10D720FC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -72,10 +72,18 @@
                       lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Year]" />
                     <inputColumn
                       refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données].Columns[Call_Type Trim]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call_Type Trim"
-                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]" />
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données].Columns[CallTypeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallTypeID"
+                      lineageId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Match Output].Columns[CallTypeID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -135,7 +143,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="25"
+                      length="20"
                       lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallType_R]"
                       name="CallType_R"
                       truncationRowDisposition="FailComponent">
@@ -144,7 +152,27 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]}</property>
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallTypeID_int]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallTypeID_int]"
+                      name="CallTypeID_int"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Match Output].Columns[CallTypeID]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -179,20 +207,20 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min"
+              refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
               description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="DER -  Cost remove per min"
+              name="DER -  Cost remove per min &amp; Trim CallType"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]"
+                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Inputs[Entrée de colonne dérivée]"
                   description="Entrée de la transformation de colonnes dérivées"
                   name="Entrée de colonne dérivée">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée].Columns[Cost_per_min]"
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Inputs[Entrée de colonne dérivée].Columns[Cost_per_min]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
@@ -217,7 +245,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée].Columns[Call Type]"
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Inputs[Entrée de colonne dérivée].Columns[Call Type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
@@ -229,19 +257,20 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée]"
+                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée]"
                   description="Sortie par défaut de la transformation de colonnes dérivées"
                   exclusionGroup="1"
                   name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]">
+                  synchronousInputId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Inputs[Entrée de colonne dérivée]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]"
-                      dataType="wstr"
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]"
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]"
                       name="Call_Type Trim"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -249,36 +278,197 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[TRIM](#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]})</property>
+                          name="Expression">(DT_STR,255,1252)[TRIM](#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Call Type]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">TRIM([Call Type])</property>
+                          name="FriendlyExpression">(DT_STR,255,1252)TRIM([Call Type])</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée]"
+                  refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie d'erreur de colonne dérivée]"
                   description="Sortie d'erreur de la transformation de colonnes dérivées"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]">
+                  synchronousInputId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Inputs[Entrée de colonne dérivée]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Call_charges\LKP - CallType"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP - CallType"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Call_type]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Call_type]) [refTable]
+where [refTable].[CallTypeLabel] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CallTypeID" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CallTypeLabel" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS Call_charges\LKP - CallType.Connections[OleDbConnection]"
+                  connectionManagerID="{F34027F6-38C3-41FA-B46D-4E21805409C1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost SS_STA]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_charges\LKP - CallType.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\LKP - CallType.Inputs[Lookup Input].Columns[Call_Type Trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call_Type Trim"
+                      lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée].Columns[Call_Type Trim]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CallTypeLabel</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT - ODS Call_charges\LKP - CallType.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Match Output].Columns[CallTypeID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Match Output].Columns[CallTypeID]"
+                      name="CallTypeID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CallTypeID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT - ODS Call_charges\LKP - CallType.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT - ODS Call_charges\LKP - CallType.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -373,12 +563,18 @@
                       externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Cost_per_min]"
                       lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]" />
                     <inputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[CallTypeID_int]"
+                      cachedDataType="ui4"
+                      cachedName="CallTypeID_int"
+                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallTypeID_int]" />
+                    <inputColumn
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[CallType_R]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="25"
+                      cachedLength="20"
                       cachedName="CallType_R"
-                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType]"
+                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeLabel]"
                       lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallType_R]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -394,11 +590,15 @@
                       precision="4"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType]"
+                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
+                      dataType="i4"
+                      name="CallTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeLabel]"
                       codePage="1252"
                       dataType="str"
-                      length="25"
-                      name="CallType" />
+                      length="20"
+                      name="CallTypeLabel" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -807,10 +1007,15 @@
           </components>
           <paths>
             <path
-              refId="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
+              refId="Package\DFT - ODS Call_charges.Paths[Lookup Match Output]"
               endId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Inputs[Entrée de conversion de données]"
+              name="Lookup Match Output"
+              startId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
+              endId="Package\DFT - ODS Call_charges\LKP - CallType.Inputs[Lookup Input]"
               name="Sortie de colonne dérivée"
-              startId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Outputs[Sortie de colonne dérivée]" />
+              startId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée]" />
             <path
               refId="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
               endId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB]"
@@ -823,7 +1028,7 @@
               startId="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges.Outputs[Sortie de source OLE DB]" />
             <path
               refId="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
-              endId="Package\DFT - ODS Call_charges\DER -  Cost remove per min.Inputs[Entrée de colonne dérivée]"
+              endId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Inputs[Entrée de colonne dérivée]"
               name="Sortie Unpivot"
               startId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot]" />
           </paths>
@@ -871,11 +1076,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="201.333333333334,42"
+          Size="201,42"
           Id="Package\DFT - ODS Call_charges"
           TopLeft="124.749994914979,173.263156354675" />
         <NodeLayout
-          Size="261.333333333334,42"
+          Size="261,42"
           Id="Package\SQL -TRUNCATE ODS Call Charges"
           TopLeft="94.99999307096,56.6315783914437" />
         <EdgeLayout
@@ -907,27 +1112,49 @@
     design-time-name="Package\DFT - ODS Call_charges">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="179,42"
-          Id="Package\DFT - ODS Call_charges\UPVT - Call charges"
-          TopLeft="159.624987231568,95.6491222435804" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="226,42"
           Id="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges"
-          TopLeft="139.124996284023,331.842102333284" />
-        <NodeLayout
-          Size="216,42"
-          Id="Package\DFT - ODS Call_charges\DER -  Cost remove per min"
-          TopLeft="145.124997848646,176.894735602543" />
-        <NodeLayout
-          Size="219,42"
-          Id="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping"
-          TopLeft="142.749995585531,255.157892670906" />
+          TopLeft="140.124996284023,438.842102333284" />
         <NodeLayout
           Size="219,42"
           Id="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges"
           TopLeft="144.249993462116,11.5263157068362" />
+        <NodeLayout
+          Size="298,42"
+          Id="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType"
+          TopLeft="104.124997848646,176.894735602543" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping"
+          TopLeft="143.749995585531,354.157892670906" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DFT - ODS Call_charges\UPVT - Call charges"
+          TopLeft="159.624987231568,95.6491222435804" />
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
+          TopLeft="253.187495934777,396.157892670906">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.684209662378"
+              Start="0,0"
+              End="0,35.184209662378">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.184209662378" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
           TopLeft="251.124992540107,137.64912224358">
@@ -972,20 +1199,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="153,42"
+          Id="Package\DFT - ODS Call_charges\LKP - CallType"
+          TopLeft="176.124996284023,260.842102333284" />
         <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
-          TopLeft="252.187495934777,297.157892670906">
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
+          TopLeft="252.874997066335,218.894735602543">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.684209662378"
+              EndConnector="0,41.947366730741"
               Start="0,0"
-              End="0,27.184209662378">
+              End="0,34.447366730741">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.184209662378" />
+                    End="0,34.447366730741" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -995,30 +1226,45 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
-          TopLeft="252.687496717088,218.894735602543">
+          Id="Package\DFT - ODS Call_charges.Paths[Lookup Match Output]"
+          TopLeft="252.937495934777,302.842102333284">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.263157068363"
+              EndConnector="0,51.315790337622"
               Start="0,0"
-              End="0,28.763157068363">
+              End="0,43.815790337622">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.763157068363" />
+                    End="0,43.815790337622" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.103207668811,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges">
     <Properties>
@@ -1033,15 +1279,25 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges">
+    design-time-name="Package\DFT - ODS Call_charges\LKP - CallType">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Call_type]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
