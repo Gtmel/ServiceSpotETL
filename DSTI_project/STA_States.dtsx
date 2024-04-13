@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_States"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{1814721D-9958-4E47-BB16-F89C9F01EB24}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{17036538-1163-4C25-86D8-EBA3D290DF1C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\US States.csv">
+          DTS:ConnectionString="C:\Users\kacik\Documents\data\US States.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="StateCD"
-              DTS:DTSID="{1751C927-C3B2-4469-97A0-6010853CF406}"
+              DTS:DTSID="{25FC8016-9B5D-4880-973E-8B38B67428DE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Name"
-              DTS:DTSID="{7D94375F-8ED4-49A6-BC37-4B670F1B3AF2}"
+              DTS:DTSID="{61191D8E-D8BD-424F-A958-73FCA9BF105D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{9BEC5037-11ED-4C4D-A7EB-CE6C69DD3BAC}"
+              DTS:DTSID="{BE1DE51D-8970-4F09-94E6-5B560725EBFC}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -247,7 +247,7 @@
                 <property
                   dataType="System.String"
                   description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowset">[dbo].[US_states]</property>
+                  name="OpenRowset">[dbo].[US_States]</property>
                 <property
                   dataType="System.String"
                   description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
@@ -432,7 +432,7 @@
           Id="Package\OLE_DST - STA States"
           TopLeft="165.74999223277,132.947366873478" />
         <NodeLayout
-          Size="229,42"
+          Size="229.333333333334,42"
           Id="Package\SQL - TRUNCATE STA States"
           TopLeft="151.624989019707,50.2631573538371" />
         <EdgeLayout

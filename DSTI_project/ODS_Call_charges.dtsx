@@ -11,10 +11,24 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{ED868B6F-6672-42A7-934D-CAC189CB7382}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{BC0D2A93-A9C3-4F1F-8B55-42D897F541A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E07E185F-6235-4FFC-93BC-BD53EDB9BCC5}"
+      DTS:ObjectName="localhost.SS_ODS 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Call_charges-{E07E185F-6235-4FFC-93BC-BD53EDB9BCC5}localhost.SS_ODS 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -300,7 +314,7 @@
               <connections>
                 <connection
                   refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Connections[OleDbConnection]"
-                  connectionManagerID="{9398B56B-B107-4951-BE94-45BC59FDF1F8}:external"
+                  connectionManagerID="{A1D7A931-EB8F-407E-866C-1C8179DADA26}:external"
                   connectionManagerRefId="Project.ConnectionManagers[localhost.SS_ODS]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
@@ -352,7 +366,7 @@
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Cost_per_min]"
                       dataType="numeric"
                       name="Cost_per_min"
-                      precision="18"
+                      precision="4"
                       scale="2" />
                   </externalMetadataColumns>
                 </input>
@@ -798,7 +812,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9398B56B-B107-4951-BE94-45BC59FDF1F8}"
+          SQLTask:Connection="{A1D7A931-EB8F-407E-866C-1C8179DADA26}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Call_charges" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -826,11 +840,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="201,42"
+          Size="201.333333333334,42"
           Id="Package\DFT - ODS Call_charges"
           TopLeft="124.749994914979,175.263156354675" />
         <NodeLayout
-          Size="261,42"
+          Size="261.333333333334,42"
           Id="Package\SQL -TRUNCATE ODS Call Charges"
           TopLeft="94.99999307096,56.6315783914437" />
         <EdgeLayout
@@ -864,13 +878,13 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\DFT - ODS Call_charges\UPVT  -call charges"
+          TopLeft="169.624987231568,95.6491222435804" />
+        <NodeLayout
           Size="226,42"
           Id="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges"
           TopLeft="145.124996284023,348.842102333284" />
-        <NodeLayout
-          Size="219,42"
-          Id="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges"
-          TopLeft="146.249993462116,7.52631570683622" />
         <NodeLayout
           Size="174,42"
           Id="Package\DFT - ODS Call_charges\DER -  cost replace"
@@ -880,9 +894,31 @@
           Id="Package\DFT - ODS Call_charges\DCNV - year-cost-calltype"
           TopLeft="153.749995585531,267.157892670906" />
         <NodeLayout
-          Size="175,43"
-          Id="Package\DFT - ODS Call_charges\UPVT  -call charges"
-          TopLeft="169.624987231568,95.6491222435804" />
+          Size="218.666666666667,42"
+          Id="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges"
+          TopLeft="146.249993462116,7.52631570683622" />
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
+          TopLeft="256.624992540107,138.64912224358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.2456133589626"
+              Start="0,0"
+              End="0,31.7456133589626">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7456133589626" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie de source OLE DB]"
           TopLeft="256.437490346842,49.5263157068362">
@@ -941,28 +977,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,39.763157068363" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
-          TopLeft="256.624992540107,138.64912224358">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.2456133589626"
-              Start="0,0"
-              End="0,31.7456133589626">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.7456133589626" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

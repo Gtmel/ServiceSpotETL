@@ -11,10 +11,24 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{35C4E085-754C-4D6F-B733-C94CF1B9D17C}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{FB94A055-E1C1-445F-AC1D-549C3D3A9FAF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.SS_ADM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DC4FDEF8-4FB9-4C1E-9BEA-A8D751B58A35}"
+      DTS:ObjectName="localhost.SS_ADM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ADM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Call_data-{DC4FDEF8-4FB9-4C1E-9BEA-A8D751B58A35}localhost.SS_ADM;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -700,7 +714,7 @@
               <connections>
                 <connection
                   refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Connections[OleDbConnection]"
-                  connectionManagerID="{9398B56B-B107-4951-BE94-45BC59FDF1F8}:external"
+                  connectionManagerID="{A1D7A931-EB8F-407E-866C-1C8179DADA26}:external"
                   connectionManagerRefId="Project.ConnectionManagers[localhost.SS_ODS]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
@@ -757,6 +771,12 @@
                       cachedName="CallTime"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTime]"
                       lineageId="Package\DFT - ODS Call_data\DCNV - Divide Date and Time.Outputs[Data Conversion Output].Columns[CallTime]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[CallTimestamp_R]"
+                      cachedDataType="date"
+                      cachedName="CallTimestamp_R"
+                      externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTimestamp]"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Outputs[Sortie de conversion de données].Columns[CallTimestamp_R]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -768,11 +788,11 @@
                       name="EmployeeID" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallDuration]"
-                      dataType="i4"
+                      dataType="i8"
                       name="CallDuration" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[WaitTime]"
-                      dataType="i4"
+                      dataType="i8"
                       name="WaitTime" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallAbandoned]"
@@ -780,7 +800,7 @@
                       name="CallAbandoned" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type]"
-                      dataType="i4"
+                      dataType="i8"
                       name="Call Type" />
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallDate]"
@@ -789,8 +809,11 @@
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTime]"
                       dataType="dbTime2"
-                      name="CallTime"
-                      scale="7" />
+                      name="CallTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTimestamp]"
+                      dataType="dbTimeStamp"
+                      name="CallTimestamp" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -878,8 +901,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Connections[OleDbConnection]"
-                  connectionManagerID="{4B90492A-6DD7-46B4-958D-CD752F21F988}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost SS_ADM]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.SS_ADM]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.SS_ADM]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
               </connections>
@@ -1259,7 +1282,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9398B56B-B107-4951-BE94-45BC59FDF1F8}"
+          SQLTask:Connection="{A1D7A931-EB8F-407E-866C-1C8179DADA26}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Call_data" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1287,7 +1310,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="183,42"
+          Size="182.666666666667,42"
           Id="Package\DFT - ODS Call_data"
           TopLeft="212.499989382923,174.052629843561" />
         <NodeLayout
@@ -1325,33 +1348,41 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="236,43"
-          Id="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject"
-          TopLeft="759.999977350236,180.99999460578" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\DFT - ODS Call_data\OLE_DST - ODS Call data"
-          TopLeft="114.74999492988,522.315778554724" />
-        <NodeLayout
-          Size="163,43"
-          Id="Package\DFT - ODS Call_data\DER-Date rejects"
-          TopLeft="487.999985456467,163.999995112419" />
-        <NodeLayout
-          Size="225,42"
-          Id="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date"
-          TopLeft="103.99999499321,106.999996542931" />
-        <NodeLayout
-          Size="205,42"
-          Id="Package\DFT - ODS Call_data\OLE_SRC- STA Call data"
-          TopLeft="138.999994367361,27.9999990165234" />
-        <NodeLayout
-          Size="185,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Convert to int"
-          TopLeft="136.499993287027,277.999994026987" />
-        <NodeLayout
           Size="158,42"
           Id="Package\DFT - ODS Call_data\DCNV - resizing"
           TopLeft="138.12499534525,435.684202304343" />
+        <NodeLayout
+          Size="209.333333333334,42"
+          Id="Package\DFT - ODS Call_data\OLE_DST - ODS Call data"
+          TopLeft="114.74999492988,522.315778554724" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\DFT - ODS Call_data\DCNV - Convert to boolean"
+          TopLeft="117.99999499321,359.315778554724" />
+        <NodeLayout
+          Size="236,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject"
+          TopLeft="759.999977350236,180.99999460578" />
+        <NodeLayout
+          Size="205.333333333334,42"
+          Id="Package\DFT - ODS Call_data\OLE_SRC- STA Call data"
+          TopLeft="138.999994367361,27.9999990165234" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DER-Date rejects"
+          TopLeft="487.999985456467,163.999995112419" />
+        <NodeLayout
+          Size="225.333333333334,42"
+          Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
+          TopLeft="117,195" />
+        <NodeLayout
+          Size="185.333333333334,42"
+          Id="Package\DFT - ODS Call_data\DCNV - Convert to int"
+          TopLeft="136.499993287027,277.999994026987" />
+        <NodeLayout
+          Size="225.333333333334,42"
+          Id="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date"
+          TopLeft="103.99999499321,106.999996542931" />
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de source OLE DB]"
           TopLeft="241.499994367361,69.9999990165234">
@@ -1378,6 +1409,84 @@
                     Point3="-24.999999374151,22.4999987632038" />
                   <mssgle:LineSegment
                     End="-24.999999374151,29.4999975264076" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données3]"
+          TopLeft="220.56249516923,401.315778554724">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.3684237496191"
+              Start="0,0"
+              End="0,26.8684237496191">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8684237496191" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
+          TopLeft="226.499994140119,319.999994026987">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.3157845277369"
+              Start="0,0"
+              End="0,31.8157845277369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.8157845277369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
+          TopLeft="216.49999499321,148.999996542931">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.00000500679,46.000003457069"
+              Start="0,0"
+              End="13.00000500679,38.500003457069">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0000017285345" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0000017285345"
+                    Point2="0,23.0000017285345"
+                    Point3="4,23.0000017285345" />
+                  <mssgle:LineSegment
+                    End="9.00000500678999,23.0000017285345" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.00000500678999,23.0000017285345"
+                    Point2="13.00000500679,23.0000017285345"
+                    Point3="13.00000500679,27.0000017285345" />
+                  <mssgle:LineSegment
+                    End="13.00000500679,38.500003457069" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1478,44 +1587,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="225,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
-          TopLeft="117,195" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
-          TopLeft="216.49999499321,148.999996542931">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="13.00000500679,46.000003457069"
-              Start="0,0"
-              End="13.00000500679,38.500003457069">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.0000017285345" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.0000017285345"
-                    Point2="0,23.0000017285345"
-                    Point3="4,23.0000017285345" />
-                  <mssgle:LineSegment
-                    End="9.00000500678999,23.0000017285345" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.00000500678999,23.0000017285345"
-                    Point2="13.00000500679,23.0000017285345"
-                    Point3="13.00000500679,27.0000017285345" />
-                  <mssgle:LineSegment
-                    End="13.00000500679,38.500003457069" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Data Conversion Output]"
           TopLeft="229.249996643513,237">
@@ -1538,59 +1609,11 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="212,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Convert to boolean"
-          TopLeft="117.99999499321,359.315778554724" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
-          TopLeft="226.499994140119,319.999994026987">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.3157845277369"
-              Start="0,0"
-              End="0,31.8157845277369">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.8157845277369" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données3]"
-          TopLeft="220.56249516923,401.315778554724">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.3684237496191"
-              Start="0,0"
-              End="0,26.8684237496191">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.8684237496191" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject">
+    design-time-name="Package\DFT - ODS Call_data\OLE_DST - ODS Call data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1603,7 +1626,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Call_data\OLE_DST - ODS Call data">
+    design-time-name="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
