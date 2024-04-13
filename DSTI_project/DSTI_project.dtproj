@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-0AVDDIC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAG23DDGf9gEedSPcS//d81AAAAAACAAAAAAAQZgAAAAEAACAAAADPL8jQox0dpe2svMaj/ePwbXvuvLxvfZK4g7bDY/93ewAAAAAOgAAAAAIAACAAAAB4TWMEMH+zPsN9mqX+q0y0vSYe8eEhP9rzrR62njE3/pAAAACMl3z60YIAnHcF6Rg/PkFStX75EaEJZDl0V5cIs/yCGkU27DSh9TK4xsONk7xs10nqWvPhefrdU8gAQlkMAL064q4PHZvgdztt+MJxIxGZM0Gn9VZMXXF7hTs2slZcnHj41ZQ2SCblRlQWL9pWzJIdsCWS+cziD8VOd0++ESXZ7mcV+MqUTNccFsQ8ccx6X8RAAAAAhEdA8iA7xncn94hPbEz47HqlpES450AQvw65AZl1b9DyUB9aiP1MTfTyHaHrwlwrfT7xDqbjgeXusqD58tSkpw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAX6foZ+cXzUKf1/6fJPsabgAAAAACAAAAAAAQZgAAAAEAACAAAAC4oMalyYbkLJwpjqV9yCqYuBEPVvAaVNxvId0LqHKvnAAAAAAOgAAAAAIAACAAAAA/DcZ49JgqDLHKT+EdB3OH4r9iXmL46p/Ka0c8NCcdO5AAAADeAS5LrzfWLGpQMuAUUggg3WEFO9cEuwL5AfpsmtjjC4t0eKAhArVMTHEUC6U0MfuBEgcVow9BHqrl2JjN18B//JrovOcKN9nyF7FkRaF++WV95RjIzdAwqWI/24kNCOzb3k9dx+/A9slcAaH/1Z0l42h+RhG4abQAT295uoT1C8VG1005xe4hoXoc6OTx9RBAAAAAlYGFoUWdg3m3jpXUm+34tAsycnbUPVFOetn8BK1vxHF9znej9KZB3903GHY6lrLI5gm0vdj1m7hl9IcBkRk5zg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -855,8 +855,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1055,8 +1053,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1255,8 +1251,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1455,8 +1449,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1570,12 +1562,12 @@
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2024-04-08T18:53:06.5017386Z</Value>
+            <Value xsi:type="xsd:dateTime">2024-04-13T10:44:56.5456323Z</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{02cb6e70-64c5-46ef-b66e-3487aa800e33}</Id>
             <Name>Project::RootFile</Name>
-            <Value xsi:type="xsd:string">C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\</Value>
+            <Value xsi:type="xsd:string">C:\Users\PC\Documents\MSc Data Analytics\MSc Courses\TU2 Data Management (DM) &amp; Databases (DB)\TU2_DB_Datawarehousing &amp; ETL\Exam_Project\Data\</Value>
           </ConfigurationSetting>
         </ParameterConfigurationValues>
       </Options>
