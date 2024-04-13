@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{349DFE5A-C4A9-4DDE-B161-E7A37FF1C0B4}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{0A80B093-DD03-4DCE-8766-6D6A3B87DAEE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Employees.csv">
+          DTS:ConnectionString="C:\Users\kacik\Documents\data\Employees.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -479,7 +479,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="183,42"
+          Size="182.666666666667,42"
           Id="Package\DFT - STA Employee"
           TopLeft="149.624992372468,147.105261828183" />
         <NodeLayout
@@ -517,11 +517,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="239,42"
+          Size="238.666666666667,42"
           Id="Package\DFT - STA Employee\OLE_DST - STA Employee"
           TopLeft="143.874988293276,181.631577392282" />
         <NodeLayout
-          Size="180,43"
+          Size="180,42.6666666666667"
           Id="Package\DFT - STA Employee\FF_SRC- Employees"
           TopLeft="174.37499220483,34.894736458968" />
         <EdgeLayout

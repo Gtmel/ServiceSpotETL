@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{891D6E26-EECE-454A-8A63-4207C6A70291}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{A26352D2-2634-4268-9E16-E87F9537E7BC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Call Types.csv">
+          DTS:ConnectionString="C:\Users\kacik\Documents\data\Call Types.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CallTypeID"
-              DTS:DTSID="{AC428A7D-1069-4573-9A0B-09C4B9BF24D4}"
+              DTS:DTSID="{E9D2837C-F059-4673-A3FC-7BBA70D642AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CallTypeLabel"
-              DTS:DTSID="{1534C8FD-E021-4460-BA6D-7AC6ACB511B2}"
+              DTS:DTSID="{C28EA0D2-3680-404F-A3F0-1D3931DAD441}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -377,7 +377,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="181,42"
+          Size="181.333333333334,42"
           Id="Package\DFT - STA Call Type"
           TopLeft="129.99999307096,132.631577677757" />
         <NodeLayout
@@ -419,7 +419,7 @@
           Id="Package\DFT - STA Call Type\OLE_DST - STA Call_type"
           TopLeft="139.499992512167,153.105261542708" />
         <NodeLayout
-          Size="177,42"
+          Size="177.333333333334,42"
           Id="Package\DFT - STA Call Type\FF_SRC - Call_type"
           TopLeft="166.249991897494,37.5789469777712" />
         <EdgeLayout
