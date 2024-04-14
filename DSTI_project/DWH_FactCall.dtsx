@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{5C134FC8-7904-45B2-8B39-598A7F49A511}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{5BE4E8E3-0F9E-4BFC-8F67-EB90B00137A1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2899,7 +2899,7 @@ where [refTable].[CallTypeID] = ? and [refTable].[Year] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - FactCall SCD 1\704:invalid};#{Package\DFT - FactCall SCD 1\DER - CallYear.Outputs[Derived Column Output].Columns[Year]};</property>
+                  name="ParameterMap">#{Package\DFT - FactCall SCD 1\648:invalid};#{Package\DFT - FactCall SCD 1\DER - CallYear.Outputs[Derived Column Output].Columns[Year]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3072,7 +3072,7 @@ where [refTable].[Date] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - FactCall SCD 1\169:invalid};</property>
+                  name="ParameterMap">#{Package\DFT - FactCall SCD 1\ALL - CallKey.Outputs[Union All Output 1].Columns[CallDate]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3229,7 +3229,7 @@ where [refTable].[EmployeeID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - FactCall SCD 1\545:invalid};</property>
+                  name="ParameterMap">#{Package\DFT - FactCall SCD 1\650:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3461,7 +3461,7 @@ where [refTable].[EmployeeID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Functional_Rejects]</property>
+                  name="OpenRowset">[dbo].[Functional_reject]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3530,26 +3530,6 @@ where [refTable].[EmployeeID] = ?</property>
                       cachedName="RejectDescription"
                       externalMetadataColumnId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectDescription]"
                       lineageId="Package\DFT - FactCall SCD 1\ALL - Rejects.Outputs[Union All Output 1].Columns[RejectDescription]" />
-                    <inputColumn
-                      refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].Columns[Reject PackageAndTask]"
-                      cachedDataType="wstr"
-                      cachedLength="205"
-                      cachedName="Reject PackageAndTask"
-                      externalMetadataColumnId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Reject PackageAndTask]"
-                      lineageId="Package\DFT - FactCall SCD 1\ALL - Rejects.Outputs[Union All Output 1].Columns[Reject PackageAndTask]" />
-                    <inputColumn
-                      refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].Columns[Reject Column]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Reject Column"
-                      externalMetadataColumnId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Reject Column]"
-                      lineageId="Package\DFT - FactCall SCD 1\ALL - Rejects.Outputs[Union All Output 1].Columns[Reject Column]" />
-                    <inputColumn
-                      refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].Columns[Count all]"
-                      cachedDataType="ui8"
-                      cachedName="Count all"
-                      externalMetadataColumnId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfCases]"
-                      lineageId="Package\DFT - FactCall SCD 1\ALL - Rejects.Outputs[Union All Output 1].Columns[Count all]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3560,23 +3540,18 @@ where [refTable].[EmployeeID] = ?</property>
                     <externalMetadataColumn
                       refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectDescription]"
                       dataType="wstr"
-                      length="97"
+                      length="130"
                       name="RejectDescription" />
                     <externalMetadataColumn
-                      refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Reject PackageAndTask]"
+                      refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectPackageAndTask]"
                       dataType="wstr"
                       length="205"
-                      name="Reject PackageAndTask" />
+                      name="RejectPackageAndTask" />
                     <externalMetadataColumn
-                      refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Reject Column]"
+                      refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectColumn]"
                       dataType="wstr"
-                      length="50"
-                      name="Reject Column" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfCases]"
-                      dataType="numeric"
-                      name="NumberOfCases"
-                      precision="20" />
+                      length="13"
+                      name="RejectColumn" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4049,27 +4024,27 @@ where [refTable].[EmployeeID] = ?</property>
               name="Aggregate Output 1"
               startId="Package\DFT - FactCall SCD 1\AGG - Groupby EmployeeID.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 12]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 11]"
               endId="Package\DFT - FactCall SCD 1\ALL - Rejects.Inputs[Union All Input 3]"
               name="Aggregate Output 1"
               startId="Package\DFT - FactCall SCD 1\AGG - Groupby Date Rejects.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 11]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 12]"
               endId="Package\DFT - FactCall SCD 1\ALL - Rejects.Inputs[Union All Input 2]"
               name="Aggregate Output 1"
               startId="Package\DFT - FactCall SCD 1\AGG - Groupby CallType Rejects.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output5]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output]"
               endId="Package\DFT - FactCall SCD 1\ALL - CallKey.Inputs[Union All Input 2]"
               name="Derived Column Output"
               startId="Package\DFT - FactCall SCD 1\DER - CallKey -1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output4]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output1]"
               endId="Package\DFT - FactCall SCD 1\ALL - EmployeeKey.Inputs[Union All Input 2]"
               name="Derived Column Output"
               startId="Package\DFT - FactCall SCD 1\DER - EmployeeKey -1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output6]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output2]"
               endId="Package\DFT - FactCall SCD 1\ALL - DateKey.Inputs[Union All Input 2]"
               name="Derived Column Output"
               startId="Package\DFT - FactCall SCD 1\DER - DateKey -1.Outputs[Derived Column Output]" />
@@ -4079,37 +4054,42 @@ where [refTable].[EmployeeID] = ?</property>
               name="Derived Column Output"
               startId="Package\DFT - FactCall SCD 1\DER - CallYear.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output4]"
               endId="Package\DFT - FactCall SCD 1\AGG - Groupby Date Rejects.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
               startId="Package\DFT - FactCall SCD 1\DER - Date Rejects.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output2]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output5]"
               endId="Package\DFT - FactCall SCD 1\AGG - Groupby EmployeeID.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
               startId="Package\DFT - FactCall SCD 1\DER - Employee Rejects.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output1]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Derived Column Output6]"
               endId="Package\DFT - FactCall SCD 1\AGG - Groupby CallType Rejects.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
               startId="Package\DFT - FactCall SCD 1\DER - Callcharges Rejects.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output2]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output]"
               endId="Package\DFT - FactCall SCD 1\ALL - DateKey.Inputs[Union All Input 1]"
               name="Lookup Match Output"
               startId="Package\DFT - FactCall SCD 1\LKP - DimDate.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output1]"
               endId="Package\DFT - FactCall SCD 1\ALL - EmployeeKey.Inputs[Union All Input 1]"
               name="Lookup Match Output"
               startId="Package\DFT - FactCall SCD 1\LKP - DimEmployee.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output1]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output2]"
               endId="Package\DFT - FactCall SCD 1\ALL - CallKey.Inputs[Union All Input 1]"
               name="Lookup Match Output"
               startId="Package\DFT - FactCall SCD 1\LKP - DimCallinfo.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - FactCall SCD 1.Paths[Lookup No Match Output2]"
+              endId="Package\DFT - FactCall SCD 1\MLT - DateNotFound.Inputs[Multicast Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\DFT - FactCall SCD 1\LKP - DimDate.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT - FactCall SCD 1.Paths[Lookup No Match Output]"
               endId="Package\DFT - FactCall SCD 1\MLT - CallchargesNotFound.Inputs[Multicast Input 1]"
               name="Lookup No Match Output"
               startId="Package\DFT - FactCall SCD 1\LKP - DimCallinfo.Outputs[Lookup No Match Output]" />
@@ -4119,32 +4099,27 @@ where [refTable].[EmployeeID] = ?</property>
               name="Lookup No Match Output"
               startId="Package\DFT - FactCall SCD 1\LKP - DimEmployee.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Lookup No Match Output]"
-              endId="Package\DFT - FactCall SCD 1\MLT - DateNotFound.Inputs[Multicast Input 1]"
-              name="Lookup No Match Output"
-              startId="Package\DFT - FactCall SCD 1\LKP - DimDate.Outputs[Lookup No Match Output]" />
-            <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 11]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 1]"
               endId="Package\DFT - FactCall SCD 1\DER - Date Rejects.Inputs[Derived Column Input]"
               name="Multicast Output 1"
               startId="Package\DFT - FactCall SCD 1\MLT - DateNotFound.Outputs[Multicast Output 1]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 1]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 11]"
               endId="Package\DFT - FactCall SCD 1\DER - EmployeeKey -1.Inputs[Derived Column Input]"
               name="Multicast Output 1"
               startId="Package\DFT - FactCall SCD 1\MLT - EmployeeNotFound.Outputs[Multicast Output 1]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 21]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 2]"
               endId="Package\DFT - FactCall SCD 1\DER - DateKey -1.Inputs[Derived Column Input]"
               name="Multicast Output 2"
               startId="Package\DFT - FactCall SCD 1\MLT - DateNotFound.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 22]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 21]"
               endId="Package\DFT - FactCall SCD 1\DER - CallKey -1.Inputs[Derived Column Input]"
               name="Multicast Output 2"
               startId="Package\DFT - FactCall SCD 1\MLT - CallchargesNotFound.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 2]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Multicast Output 22]"
               endId="Package\DFT - FactCall SCD 1\DER - Employee Rejects.Inputs[Derived Column Input]"
               name="Multicast Output 2"
               startId="Package\DFT - FactCall SCD 1\MLT - EmployeeNotFound.Outputs[Multicast Output 2]" />
@@ -4160,19 +4135,19 @@ where [refTable].[EmployeeID] = ?</property>
               startId="Package\DFT - FactCall SCD 1\OLE_SRC ODS Call_data.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DFT - FactCall SCD 1.Paths[Union All Output 12]"
+              endId="Package\DFT - FactCall SCD 1\DER - CallYear.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\DFT - FactCall SCD 1\ALL - EmployeeKey.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\DFT - FactCall SCD 1.Paths[Union All Output 1]"
               endId="Package\DFT - FactCall SCD 1\LKP - DimDate.Inputs[Lookup Input]"
               name="Union All Output 1"
               startId="Package\DFT - FactCall SCD 1\ALL - CallKey.Outputs[Union All Output 1]" />
             <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Union All Output 1]"
+              refId="Package\DFT - FactCall SCD 1.Paths[Union All Output 11]"
               endId="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects.Inputs[OLE DB Destination Input]"
               name="Union All Output 1"
               startId="Package\DFT - FactCall SCD 1\ALL - Rejects.Outputs[Union All Output 1]" />
-            <path
-              refId="Package\DFT - FactCall SCD 1.Paths[Union All Output 11]"
-              endId="Package\DFT - FactCall SCD 1\DER - CallYear.Inputs[Derived Column Input]"
-              name="Union All Output 1"
-              startId="Package\DFT - FactCall SCD 1\ALL - EmployeeKey.Outputs[Union All Output 1]" />
             <path
               refId="Package\DFT - FactCall SCD 1.Paths[Union All Output 13]"
               endId="Package\DFT - FactCall SCD 1\OLE_DST - DWH FactCall.Inputs[OLE DB Destination Input]"
@@ -4208,33 +4183,25 @@ where [refTable].[EmployeeID] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="256,42"
-          Id="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects"
-          TopLeft="1281,445.75" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\DFT - FactCall SCD 1\LKP - DimDate"
-          TopLeft="146.571428571429,545.714285714286" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\DFT - FactCall SCD 1\LKP - DimEmployee"
-          TopLeft="137,123" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\DFT - FactCall SCD 1\DER - Date Rejects"
-          TopLeft="718.571428571429,541.714285714286" />
-        <NodeLayout
-          Size="210,42"
-          Id="Package\DFT - FactCall SCD 1\DER - Callcharges Rejects"
-          TopLeft="706.571428571429,365.714285714286" />
+          Size="145.333333333334,42"
+          Id="Package\DFT - FactCall SCD 1\ALL - Rejects"
+          TopLeft="1075,450" />
         <NodeLayout
           Size="208,42"
           Id="Package\DFT - FactCall SCD 1\MLT - EmployeeNotFound"
           TopLeft="435,120" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\DFT - FactCall SCD 1\LKP - DimCallinfo"
-          TopLeft="136.571428571429,367.714285714286" />
+          Size="182,42"
+          Id="Package\DFT - FactCall SCD 1\MLT - DateNotFound"
+          TopLeft="438.571428571429,544.714285714286" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT - FactCall SCD 1\ALL - DateKey"
+          TopLeft="140,626" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\DFT - FactCall SCD 1\LKP - DimEmployee"
+          TopLeft="137,123" />
         <NodeLayout
           Size="200,42"
           Id="Package\DFT - FactCall SCD 1\DER - Employee Rejects"
@@ -4244,97 +4211,83 @@ where [refTable].[EmployeeID] = ?</property>
           Id="Package\DFT - FactCall SCD 1\DER - CallYear"
           TopLeft="141.571428571429,291.285714285714" />
         <NodeLayout
-          Size="182,42"
-          Id="Package\DFT - FactCall SCD 1\MLT - DateNotFound"
-          TopLeft="438.571428571429,544.714285714286" />
+          Size="166,42"
+          Id="Package\DFT - FactCall SCD 1\LKP - DimCallinfo"
+          TopLeft="136.571428571429,367.714285714286" />
         <NodeLayout
-          Size="217,42"
+          Size="206.666666666667,42"
+          Id="Package\DFT - FactCall SCD 1\OLE_SRC ODS Call_data"
+          TopLeft="120,33" />
+        <NodeLayout
+          Size="217.333333333334,42"
           Id="Package\DFT - FactCall SCD 1\MLT - CallchargesNotFound"
           TopLeft="434.571428571429,368.714285714286" />
         <NodeLayout
-          Size="167,42"
+          Size="176,42"
+          Id="Package\DFT - FactCall SCD 1\ALL - EmployeeKey"
+          TopLeft="133,207" />
+        <NodeLayout
+          Size="166.666666666667,42"
           Id="Package\DFT - FactCall SCD 1\DER - DateKey -1"
           TopLeft="440.571428571429,628.714285714286" />
         <NodeLayout
-          Size="218,42"
-          Id="Package\DFT - FactCall SCD 1\AGG - Groupby EmployeeID"
-          TopLeft="822,209" />
+          Size="162,42"
+          Id="Package\DFT - FactCall SCD 1\DER - CallKey -1"
+          TopLeft="457.571428571429,458.714285714286" />
         <NodeLayout
-          Size="221,42"
-          Id="Package\DFT - FactCall SCD 1\AGG - Groupby Date Rejects"
-          TopLeft="782.571428571429,630.714285714286" />
+          Size="152,42"
+          Id="Package\DFT - FactCall SCD 1\LKP - DimDate"
+          TopLeft="146.571428571429,545.714285714286" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\DFT - FactCall SCD 1\OLE_DST - DWH FactCall"
+          TopLeft="110,713" />
         <NodeLayout
           Size="192,42"
           Id="Package\DFT - FactCall SCD 1\DER - EmployeeKey -1"
           TopLeft="441,211" />
         <NodeLayout
+          Size="210,42"
+          Id="Package\DFT - FactCall SCD 1\DER - Callcharges Rejects"
+          TopLeft="706.571428571429,365.714285714286" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\DFT - FactCall SCD 1\ALL - CallKey"
+          TopLeft="147,458" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\DFT - FactCall SCD 1\AGG - Groupby EmployeeID"
+          TopLeft="822,209" />
+        <NodeLayout
+          Size="221.333333333334,42"
+          Id="Package\DFT - FactCall SCD 1\AGG - Groupby Date Rejects"
+          TopLeft="782.571428571429,630.714285714286" />
+        <NodeLayout
           Size="252,42"
           Id="Package\DFT - FactCall SCD 1\AGG - Groupby CallType Rejects"
           TopLeft="749.571428571429,457.714285714286" />
         <NodeLayout
-          Size="162,42"
-          Id="Package\DFT - FactCall SCD 1\DER - CallKey -1"
-          TopLeft="457.571428571429,458.714285714286" />
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output2]"
-          TopLeft="812,162">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119,47"
-              Start="0,0"
-              End="119,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="4,23.5" />
-                  <mssgle:LineSegment
-                    End="115,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="115,23.5"
-                    Point2="119,23.5"
-                    Point3="119,27.5" />
-                  <mssgle:LineSegment
-                    End="119,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="256,42"
+          Id="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects"
+          TopLeft="1281,445.75" />
+        <NodeLayout
+          Size="174.666666666667,42"
+          Id="Package\DFT - FactCall SCD 1\DER - Date Rejects"
+          TopLeft="718.571428571429,541.714285714286" />
         <EdgeLayout
           Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output1]"
-          TopLeft="811.571428571429,407.714285714286">
+          TopLeft="441,230">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64,50"
+              EndConnector="-132,0"
               Start="0,0"
-              End="64,42.5">
+              End="-124.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="4,25" />
-                  <mssgle:LineSegment
-                    End="60,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="60,25"
-                    Point2="64,25"
-                    Point3="64,29" />
-                  <mssgle:LineSegment
-                    End="64,42.5" />
+                    End="-124.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4345,30 +4298,74 @@ where [refTable].[EmployeeID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output]"
-          TopLeft="806.071428571429,583.714285714286">
+          TopLeft="457.571428571429,479.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="51.5,47"
+              EndConnector="-164.571428571429,0"
               Start="0,0"
-              End="51.5,39.5">
+              End="-157.071428571429,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.9973045822103" />
+                    End="-157.071428571429,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 12]"
+          TopLeft="1001.57142857143,474.857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.428571428571,0"
+              Start="0,0"
+              End="65.928571428571,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.928571428571,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 11]"
+          TopLeft="928.571428571429,630.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="218.928571428571,-138.714285714286"
+              Start="0,0"
+              End="218.928571428571,-131.214285714286">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-52.0839430111668" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.9973045822103"
-                    Point2="0,27.9973045822103"
-                    Point3="4,27.9973045822103" />
+                    Point1="0,-52.0839430111668"
+                    Point2="0,-56.0839430111668"
+                    Point3="4,-56.0839430111668" />
                   <mssgle:LineSegment
-                    End="47.5,27.9973045822103" />
+                    End="214.928571428571,-56.0839430111668" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.5,27.9973045822103"
-                    Point2="51.5,27.9973045822103"
-                    Point3="51.5,31.9973045822103" />
+                    Point1="214.928571428571,-56.0839430111668"
+                    Point2="218.928571428571,-56.0839430111668"
+                    Point3="218.928571428571,-60.0839430111668" />
                   <mssgle:LineSegment
-                    End="51.5,39.5" />
+                    End="218.928571428571,-131.214285714286" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4378,19 +4375,31 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 21]"
-          TopLeft="526.821428571429,586.714285714286">
+          Id="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 1]"
+          TopLeft="931,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="216.5,199"
               Start="0,0"
-              End="0,34.5">
+              End="216.5,191.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,95.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,95.5"
+                    Point2="0,99.5"
+                    Point3="4,99.5" />
+                  <mssgle:LineSegment
+                    End="212.5,99.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="212.5,99.5"
+                    Point2="216.5,99.5"
+                    Point3="216.5,103.5" />
+                  <mssgle:LineSegment
+                    End="216.5,191.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4400,19 +4409,19 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 2]"
-          TopLeft="643,141">
+          Id="Package\DFT - FactCall SCD 1.Paths[Union All Output 13]"
+          TopLeft="214.5,668">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="69,0"
+              EndConnector="0,45"
               Start="0,0"
-              End="61.5,0">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="61.5,0" />
+                    End="0,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4422,19 +4431,19 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 11]"
-          TopLeft="620.571428571429,564.214285714286">
+          Id="Package\DFT - FactCall SCD 1.Paths[Union All Output 12]"
+          TopLeft="219.785714285715,249">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="98,0"
+              EndConnector="0,42.285714285714"
               Start="0,0"
-              End="90.5,0">
+              End="0,34.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="90.5,0" />
+                    End="0,34.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4444,19 +4453,19 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 1]"
-          TopLeft="538,162">
+          Id="Package\DFT - FactCall SCD 1.Paths[Union All Output 11]"
+          TopLeft="1220,468.875">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49"
+              EndConnector="61,0"
               Start="0,0"
-              End="0,41.5">
+              End="53.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5" />
+                    End="53.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4466,67 +4475,19 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Lookup No Match Output1]"
-          TopLeft="315,142.5">
+          Id="Package\DFT - FactCall SCD 1.Paths[Union All Output 1]"
+          TopLeft="221.285714285715,500">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="120,0"
+              EndConnector="0,45.714285714286"
               Start="0,0"
-              End="112.5,0">
+              End="0,38.214285714286">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="112.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0.443613281250002,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Lookup No Match Output]"
-          TopLeft="298.571428571429,566.214285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="140,0"
-              Start="0,0"
-              End="132.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="132.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="10.44361328125,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output3]"
-          TopLeft="219.071428571429,333.285714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.428571428572"
-              Start="0,0"
-              End="0,26.928571428572">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.928571428572" />
+                    End="0,38.214285714286" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4536,8 +4497,8 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 22]"
-          TopLeft="540.821428571429,410.714285714286">
+          Id="Package\DFT - FactCall SCD 1.Paths[OLE DB Source Output]"
+          TopLeft="224.75,75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4580,7 +4541,165 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 22]"
+          TopLeft="643,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69,0"
+              Start="0,0"
+              End="61.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 21]"
+          TopLeft="540.821428571429,410.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 2]"
+          TopLeft="526.821428571429,586.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 11]"
+          TopLeft="538,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Multicast Output 1]"
+          TopLeft="620.571428571429,564.214285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98,0"
+              Start="0,0"
+              End="90.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="90.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\DFT - FactCall SCD 1.Paths[Lookup No Match Output2]"
+          TopLeft="298.571428571429,566.214285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="140,0"
+              Start="0,0"
+              End="132.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="132.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="10.44361328125,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Lookup No Match Output1]"
+          TopLeft="315,142.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120,0"
+              Start="0,0"
+              End="112.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="112.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0.443613281250002,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Lookup No Match Output]"
           TopLeft="302.571428571429,389.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4603,226 +4722,8 @@ where [refTable].[EmployeeID] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="145,42"
-          Id="Package\DFT - FactCall SCD 1\ALL - Rejects"
-          TopLeft="1075,450" />
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 1]"
-          TopLeft="931,251">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="216.5,199"
-              Start="0,0"
-              End="216.5,191.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,95.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,95.5"
-                    Point2="0,99.5"
-                    Point3="4,99.5" />
-                  <mssgle:LineSegment
-                    End="212.5,99.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="212.5,99.5"
-                    Point2="216.5,99.5"
-                    Point3="216.5,103.5" />
-                  <mssgle:LineSegment
-                    End="216.5,191.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 11]"
-          TopLeft="1001.57142857143,474.857142857143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.428571428571,0"
-              Start="0,0"
-              End="65.928571428571,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="65.928571428571,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Aggregate Output 12]"
-          TopLeft="928.571428571429,630.714285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="218.928571428571,-138.714285714286"
-              Start="0,0"
-              End="218.928571428571,-131.214285714286">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-52.0839430111668" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-52.0839430111668"
-                    Point2="0,-56.0839430111668"
-                    Point3="4,-56.0839430111668" />
-                  <mssgle:LineSegment
-                    End="214.928571428571,-56.0839430111668" />
-                  <mssgle:CubicBezierSegment
-                    Point1="214.928571428571,-56.0839430111668"
-                    Point2="218.928571428571,-56.0839430111668"
-                    Point3="218.928571428571,-60.0839430111668" />
-                  <mssgle:LineSegment
-                    End="218.928571428571,-131.214285714286" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Union All Output 1]"
-          TopLeft="1220,468.875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61,0"
-              Start="0,0"
-              End="53.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="53.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="207,42"
-          Id="Package\DFT - FactCall SCD 1\OLE_SRC ODS Call_data"
-          TopLeft="120,33" />
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[OLE DB Source Output]"
-          TopLeft="224.75,75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\DFT - FactCall SCD 1\ALL - EmployeeKey"
-          TopLeft="133,207" />
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output]"
-          TopLeft="223.5,165">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,11.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output4]"
-          TopLeft="441,230">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-132,0"
-              Start="0,0"
-              End="-124.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-124.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Union All Output 11]"
-          TopLeft="219.785714285715,249">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.285714285714"
-              Start="0,0"
-              End="0,34.785714285714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.785714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="146,42"
-          Id="Package\DFT - FactCall SCD 1\ALL - CallKey"
-          TopLeft="147,458" />
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output1]"
+          Id="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output2]"
           TopLeft="219.785714285715,409.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4846,55 +4747,31 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output5]"
-          TopLeft="457.571428571429,479.357142857143">
+          Id="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output1]"
+          TopLeft="223.5,165">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-164.571428571429,0"
+              EndConnector="0,42"
               Start="0,0"
-              End="-157.071428571429,0">
+              End="0,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-157.071428571429,0" />
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Union All Output 12]"
-          TopLeft="221.285714285715,500">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.714285714286"
-              Start="0,0"
-              End="0,38.214285714286">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.214285714286" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DFT - FactCall SCD 1\ALL - DateKey"
-          TopLeft="140,626" />
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output2]"
+          Id="Package\DFT - FactCall SCD 1.Paths[Lookup Match Output]"
           TopLeft="218.785714285715,587.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4919,6 +4796,130 @@ where [refTable].[EmployeeID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output6]"
+          TopLeft="811.571428571429,407.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64,50"
+              Start="0,0"
+              End="64,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="60,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60,25"
+                    Point2="64,25"
+                    Point3="64,29" />
+                  <mssgle:LineSegment
+                    End="64,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output5]"
+          TopLeft="812,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119,47"
+              Start="0,0"
+              End="119,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="115,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="115,23.5"
+                    Point2="119,23.5"
+                    Point3="119,27.5" />
+                  <mssgle:LineSegment
+                    End="119,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output4]"
+          TopLeft="806.071428571429,583.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.5,47"
+              Start="0,0"
+              End="51.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9973045822103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.9973045822103"
+                    Point2="0,27.9973045822103"
+                    Point3="4,27.9973045822103" />
+                  <mssgle:LineSegment
+                    End="47.5,27.9973045822103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.5,27.9973045822103"
+                    Point2="51.5,27.9973045822103"
+                    Point3="51.5,31.9973045822103" />
+                  <mssgle:LineSegment
+                    End="51.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output3]"
+          TopLeft="219.071428571429,333.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.428571428572"
+              Start="0,0"
+              End="0,26.928571428572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.928571428572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FactCall SCD 1.Paths[Derived Column Output2]"
           TopLeft="440.571428571429,648.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4939,50 +4940,11 @@ where [refTable].[EmployeeID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="208,42"
-          Id="Package\DFT - FactCall SCD 1\OLE_DST - DWH FactCall"
-          TopLeft="110,713" />
-        <EdgeLayout
-          Id="Package\DFT - FactCall SCD 1.Paths[Union All Output 13]"
-          TopLeft="214.5,668">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - FactCall SCD 1\LKP - DimDate">
+    design-time-name="Package\DFT - FactCall SCD 1\LKP - DimEmployee">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -4992,7 +4954,7 @@ where [refTable].[EmployeeID] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimDate]</Value>
+          type="q3:string">[dbo].[DimEmployee]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -5005,35 +4967,12 @@ where [refTable].[EmployeeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - FactCall SCD 1\LKP - DimEmployee">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimEmployee]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DFT - FactCall SCD 1\LKP - DimCallinfo">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5043,7 +4982,7 @@ where [refTable].[EmployeeID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5064,7 +5003,43 @@ where [refTable].[EmployeeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\DFT - FactCall SCD 1\LKP - DimDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\DFT - FactCall SCD 1\OLE_DST - DWH FactCall">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - FactCall SCD 1\OLE_DST - ADM Functional Rejects">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

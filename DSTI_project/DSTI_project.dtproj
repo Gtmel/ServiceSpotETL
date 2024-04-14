@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-0AVDDIC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASauW72Bm3U2ndORniMRo/gAAAAACAAAAAAAQZgAAAAEAACAAAAAqLBgwZMjLGe+kWQDH0ednE5iTmW14ggrIT9RfB0Fl6AAAAAAOgAAAAAIAACAAAAC20T5/2xAfvE8zUx9qjJXUm6ZVw7HMJeKDpeVazGnZx5AAAAC43DwDb/YfHdbEyt0SFqDvsqYooPnaFePktkkfSXHw8x31MZIPT8o/d+2OLqGN0zEqPyu2M85kGit6EZKimkZXu3hU3rJnniw3aBguEeb9psbn6q2OgINjwcgbaybqmUZ8DEaxeOmywqBEwUC5/Sdn/9OzpSvptjKwK4Qdokj0C1j1LaQMXLmrKYXgCsBBO9RAAAAAvbBu8Tcfss0VpV+KCAp9GEnrULDs3yHuUtpCo4ogB9fxSwa3JmkPkOQeufijkUa/LIqSck+BMwn30oEPGfUf8w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAX6foZ+cXzUKf1/6fJPsabgAAAAACAAAAAAAQZgAAAAEAACAAAADv4WkSrK12D1VPHV/5LrZKT9x2XaJTiU5oH1Gg3AIrIgAAAAAOgAAAAAIAACAAAAA1Kbt1XlN7gndaiX4I+oxVAk9jwnJQOyi+mU0Y3eiop5AAAAArFv8OEv0zodoyhst/sutd8aycUeNchr4RZyisErjpd0sjTg44Zmm8bfkWjz7x+EAMgRD+36029S7Wu5igrpoGBzoofYhLpy+8GhxS88FVK7ufWrEdpgqPUULSgJYsHdU9fHkWC9FtZ6EPZtl5OPYFlSziKlVMfPkqYyTPYWA5shp63+xelb1M7lSMYvuPz/xAAAAA3cLGzWDuUJQhaw1ZXkcdGPLwCb6lvDSQIcjdEM1wNlz+dA3qG+Yqs/+BQK4L2a6XXbleHRQxjqjO09PSB3wdEg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -520,7 +520,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=SS_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{75212A43-F1A5-402D-99B4-FFB1A0BFD96F}LocalHost.SS_DWH;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=LocalHost;Initial Catalog=SS_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{75212A43-F1A5-402D-99B4-FFB1A0BFD96F}LocalHost.SS_DWH;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -624,7 +624,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">.</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">LocalHost</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1747,8 +1747,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1790,10 +1788,10 @@
                 <SSIS:Property SSIS:Name="Name">ODS_Call_data</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">37</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">38</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1E3A6674-13DE-422F-BB5E-CB5B0A2B39F6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F3D75A41-AC85-48BA-924D-49150A6DA62F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2584,10 +2582,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9FECC759-F5BE-480C-ADF5-98D4369C66C1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{604B79B1-400B-4DD9-AFC3-0D4C2896B69F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2601,10 +2599,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{303BC600-DE99-464B-87D0-C185EA6B7C71}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5BE4E8E3-0F9E-4BFC-8F67-EB90B00137A1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2656,12 +2654,12 @@
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2024-04-13T11:35:33.3102813Z</Value>
+            <Value xsi:type="xsd:dateTime">2024-04-14T15:57:25.5943324Z</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{02cb6e70-64c5-46ef-b66e-3487aa800e33}</Id>
             <Name>Project::RootFile</Name>
-            <Value xsi:type="xsd:string">C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\</Value>
+            <Value xsi:type="xsd:string">C:\Users\PC\Documents\MSc Data Analytics\MSc Courses\TU2 Data Management (DM) &amp; Databases (DB)\TU2_DB_Datawarehousing &amp; ETL\Data_Project\</Value>
           </ConfigurationSetting>
         </ParameterConfigurationValues>
       </Options>

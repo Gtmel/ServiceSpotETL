@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{9A586CCE-DE07-48A7-AE3D-D0354BAC1ED6}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{604B79B1-400B-4DD9-AFC3-0D4C2896B69F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1094,7 +1094,7 @@ where [refTable].[EmployeeID] = ?</property>
         <NodeLayout
           Size="216,42"
           Id="Package\DFT - DimEmployee SCD 1\OLE_SRC - ODS Employee"
-          TopLeft="197,51" />
+          TopLeft="197,49.2894737029918" />
         <NodeLayout
           Size="184,42"
           Id="Package\DFT - DimEmployee SCD 1\LKP - Any Changes ?"
@@ -1104,27 +1104,27 @@ where [refTable].[EmployeeID] = ?</property>
           Id="Package\DFT - DimEmployee SCD 1\OLE_DST - DWH DimEmployee"
           TopLeft="184,276" />
         <NodeLayout
-          Size="187,42"
+          Size="186.666666666667,42"
           Id="Package\DFT - DimEmployee SCD 1\CMD - Update Record"
           TopLeft="809,155" />
         <NodeLayout
-          Size="169,42"
+          Size="169.333333333334,42"
           Id="Package\DFT - DimEmployee SCD 1\LKP - EmployeeID"
           TopLeft="224,157" />
         <EdgeLayout
           Id="Package\DFT - DimEmployee SCD 1.Paths[OLE DB Source Output]"
-          TopLeft="306.75,93">
+          TopLeft="306.833333333333,91.2894737029918">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,65.7105262970082"
               Start="0,0"
-              End="0,56.5">
+              End="0,58.2105262970082">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,58.2105262970082" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
