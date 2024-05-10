@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{F3D75A41-AC85-48BA-924D-49150A6DA62F}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{DBD3AB73-3922-4C2E-9A02-B80F81586F2A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -45,6 +45,822 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\DFT - ODS Call_data\All -reject"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="All -reject"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1]"
+                  name="Unir tout entrée 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[CallTimestamp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallTimestamp"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallTimestamp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallTimestamp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[Call Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[EmployeeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeID"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[EmployeeID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallDuration]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[WaitTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[CallAbandoned]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallAbandoned"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallAbandoned]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallAbandoned]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[RejectDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RejectDate"
+                      lineageId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="130"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[CallTimestamp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallTimestamp"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallTimestamp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallTimestamp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[Call Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[EmployeeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeID"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[EmployeeID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallDuration]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[WaitTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[CallAbandoned]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallAbandoned"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallAbandoned]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallAbandoned]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[RejectDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RejectDate"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="129"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[CallTimestamp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallTimestamp"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallTimestamp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallTimestamp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[Call Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[EmployeeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeID"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[EmployeeID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallDuration]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[WaitTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[CallAbandoned]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallAbandoned"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallAbandoned]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallAbandoned]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[RejectDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RejectDate"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="129"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[CallTimestamp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallTimestamp"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallTimestamp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallTimestamp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[Call Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[EmployeeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeID"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[EmployeeID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallDuration]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[WaitTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[CallAbandoned]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallAbandoned"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallAbandoned]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallAbandoned]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[RejectDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RejectDate"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="129"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallTimestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallTimestamp]"
+                      name="CallTimestamp" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[Call Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[Call Type]"
+                      name="Call Type" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallDuration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallDuration]"
+                      name="CallDuration" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[WaitTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[WaitTime]"
+                      name="WaitTime" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallAbandoned]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[CallAbandoned]"
+                      name="CallAbandoned" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorCode]"
+                      name="ErrorCode" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[ErrorColumn]"
+                      name="ErrorColumn" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDate]"
+                      name="RejectDate" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      length="205"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectColumn]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectColumn]"
+                      name="RejectColumn" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDescription]"
+                      dataType="wstr"
+                      length="130"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDescription]"
+                      name="RejectDescription" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date"
               componentClassID="Microsoft.DataConvert"
@@ -200,77 +1016,43 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS Call_data\DCNV - Convert to int"
+              refId="Package\DFT - ODS Call_data\DCNV - convert wait time to int"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
               description="Conversion de données"
-              name="DCNV - Convert to int"
+              name="DCNV - convert wait time to int"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Inputs[Entrée de conversion de données]"
+                  refId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Inputs[Entrée de conversion de données]"
                   name="Entrée de conversion de données">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Inputs[Entrée de conversion de données].Columns[CallDuration]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="CallDuration"
-                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Inputs[Entrée de conversion de données].Columns[WaitTime]"
+                      refId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Inputs[Entrée de conversion de données].Columns[WaitTime]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="WaitTime"
                       lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Inputs[Entrée de conversion de données].Columns[Call Type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Call Type"
-                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données]"
+                  refId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie de conversion de données]"
                   exclusionGroup="1"
                   name="Sortie de conversion de données"
-                  synchronousInputId="Package\DFT - ODS Call_data\DCNV - Convert to int.Inputs[Entrée de conversion de données]">
+                  synchronousInputId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Inputs[Entrée de conversion de données]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[CallDuration_int]"
+                      refId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]"
                       dataType="ui4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[CallDuration_int]"
-                      name="CallDuration_int"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]"
-                      dataType="ui4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]"
                       name="WaitTime_int"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
                           containsID="true"
@@ -283,46 +1065,26 @@
                           name="FastParse">false</property>
                       </properties>
                     </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]"
-                      dataType="ui4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]"
-                      name="Call Type_int"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie d'erreur de conversion de données]"
+                  refId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie d'erreur de conversion de données]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de conversion de données"
-                  synchronousInputId="Package\DFT - ODS Call_data\DCNV - Convert to int.Inputs[Entrée de conversion de données]">
+                  synchronousInputId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Inputs[Entrée de conversion de données]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -533,6 +1295,160 @@
               </outputs>
             </component>
             <component
+              refId="Package\DFT - ODS Call_data\DCNV -convert call duration to int"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Conversion de données"
+              name="DCNV -convert call duration to int"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Inputs[Entrée de conversion de données]"
+                  name="Entrée de conversion de données">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Inputs[Entrée de conversion de données].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie de conversion de données]"
+                  exclusionGroup="1"
+                  name="Sortie de conversion de données"
+                  synchronousInputId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie de conversion de données].Columns[CallDuration_int]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie de conversion de données].Columns[CallDuration_int]"
+                      name="CallDuration_int"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie d'erreur de conversion de données]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de conversion de données"
+                  synchronousInputId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Call_data\DCNV -convert call type to int"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Conversion de données"
+              name="DCNV -convert call type to int"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Inputs[Entrée de conversion de données]"
+                  name="Entrée de conversion de données">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Inputs[Entrée de conversion de données].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie de conversion de données]"
+                  exclusionGroup="1"
+                  name="Sortie de conversion de données"
+                  synchronousInputId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]"
+                      name="Call Type_int"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie d'erreur de conversion de données]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de conversion de données"
+                  synchronousInputId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DFT - ODS Call_data\DER - SLA"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -549,7 +1465,7 @@
                       refId="Package\DFT - ODS Call_data\DER - SLA.Inputs[Derived Column Input].Columns[WaitTime_int]"
                       cachedDataType="ui4"
                       cachedName="WaitTime_int"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]" />
+                      lineageId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -576,7 +1492,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]} &lt; 35 ? "WithinSLA" : "OutsideSLA"</property>
+                          name="Expression">#{Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]} &lt; 35 ? "WithinSLA" : "OutsideSLA"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -606,6 +1522,459 @@
                       refId="Package\DFT - ODS Call_data\DER - SLA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT - ODS Call_data\DER - SLA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Call_data\DER- call duration rejects"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER- call duration rejects"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_data\DER- call duration rejects.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call duration rejects.Inputs[Entrée de colonne dérivée].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS Call_data\DER- call duration rejects.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
+                      name="RejectDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">CallDuration</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="129"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">"The value " + (DT_WSTR,100)#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[CallDuration]} + " Is not a valid int"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The value " + (DT_WSTR,100)CallDuration + " Is not a valid int"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS Call_data\DER- call duration rejects.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Call_data\DER- call type rejects"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER- call type rejects"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_data\DER- call type rejects.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call type rejects.Inputs[Entrée de colonne dérivée].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS Call_data\DER- call type rejects.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
+                      name="RejectDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Call Type]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="129"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">"The value " + (DT_WSTR,100)#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[Call Type]} + " Is not a valid int"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The value " + (DT_WSTR,100)[Call Type] + " Is not a valid int"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS Call_data\DER- call type rejects.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Call_data\DER- wait time rejects"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER- wait time rejects"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_data\DER- wait time rejects.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\DER- wait time rejects.Inputs[Entrée de colonne dérivée].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS Call_data\DER- wait time rejects.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
+                      name="RejectDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">WaitTime</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="129"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">"The value " + (DT_WSTR,100)#{Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB].Columns[WaitTime]} + " Is not a valid int"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The value " + (DT_WSTR,100)WaitTime + " Is not a valid int"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS Call_data\DER- wait time rejects.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -841,13 +2210,13 @@
                       cachedDataType="ui4"
                       cachedName="CallDuration_int"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallDuration]"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[CallDuration_int]" />
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie de conversion de données].Columns[CallDuration_int]" />
                     <inputColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[WaitTime_int]"
                       cachedDataType="ui4"
                       cachedName="WaitTime_int"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[WaitTime]"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]" />
+                      lineageId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie de conversion de données].Columns[WaitTime_int]" />
                     <inputColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[EmployeeID_R]"
                       cachedCodepage="1252"
@@ -875,12 +2244,6 @@
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTime]"
                       lineageId="Package\DFT - ODS Call_data\DCNV - Divide Date and Time.Outputs[Data Conversion Output].Columns[CallTime]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[Call Type_int]"
-                      cachedDataType="ui4"
-                      cachedName="Call Type_int"
-                      externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
-                      lineageId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]" />
-                    <inputColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[SLA_R]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -888,6 +2251,12 @@
                       cachedName="SLA_R"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[SLA]"
                       lineageId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données].Columns[SLA_R]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].Columns[Call Type_int]"
+                      cachedDataType="ui4"
+                      cachedName="Call Type_int"
+                      externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
+                      lineageId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie de conversion de données].Columns[Call Type_int]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1033,28 +2402,21 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="RejectDate"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDate]"
-                      lineageId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]" />
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDate]" />
                     <inputColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].Columns[RejectPackageAndTask]"
                       cachedDataType="wstr"
                       cachedLength="205"
                       cachedName="RejectPackageAndTask"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectPackageAndTask]"
-                      lineageId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].Columns[RejectColumn]"
-                      cachedDataType="wstr"
-                      cachedLength="13"
-                      cachedName="RejectColumn"
-                      externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectColumn]"
-                      lineageId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]" />
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectPackageAndTask]" />
                     <inputColumn
                       refId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].Columns[RejectDescription]"
                       cachedDataType="wstr"
                       cachedLength="130"
                       cachedName="RejectDescription"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDescription]"
-                      lineageId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]" />
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDescription]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1341,7 +2703,7 @@
           <paths>
             <path
               refId="Package\DFT - ODS Call_data.Paths[Data Conversion Output]"
-              endId="Package\DFT - ODS Call_data\DCNV - Convert to int.Inputs[Entrée de conversion de données]"
+              endId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Inputs[Entrée de conversion de données]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Call_data\DCNV - Divide Date and Time.Outputs[Data Conversion Output]" />
             <path
@@ -1351,39 +2713,84 @@
               startId="Package\DFT - ODS Call_data\DER - SLA.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données]"
+              endId="Package\DFT - ODS Call_data\DER- call duration rejects.Inputs[Entrée de colonne dérivée]"
+              name="Sortie d'erreur de conversion de données"
+              startId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie d'erreur de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données1]"
+              endId="Package\DFT - ODS Call_data\DER- call type rejects.Inputs[Entrée de colonne dérivée]"
+              name="Sortie d'erreur de conversion de données"
+              startId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie d'erreur de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données2]"
+              endId="Package\DFT - ODS Call_data\DER- wait time rejects.Inputs[Entrée de colonne dérivée]"
+              name="Sortie d'erreur de conversion de données"
+              startId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie d'erreur de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données3]"
               endId="Package\DFT - ODS Call_data\DER-Date rejects.Inputs[Entrée de colonne dérivée]"
               name="Sortie d'erreur de conversion de données"
               startId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Outputs[Sortie d'erreur de conversion de données]" />
             <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée3]"
+              endId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée2]"
+              endId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée]" />
+            <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée]"
-              endId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB]"
+              endId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée1]"
+              endId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1]"
               name="Sortie de colonne dérivée"
               startId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données]"
-              endId="Package\DFT - ODS Call_data\DCNV - Divide Date and Time.Inputs[Data Conversion Input]"
-              name="Sortie de conversion de données"
-              startId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Outputs[Sortie de conversion de données]" />
-            <path
-              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
               endId="Package\DFT - ODS Call_data\DER - SLA.Inputs[Derived Column Input]"
               name="Sortie de conversion de données"
-              startId="Package\DFT - ODS Call_data\DCNV - Convert to int.Outputs[Sortie de conversion de données]" />
+              startId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Outputs[Sortie de conversion de données]" />
             <path
-              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
               endId="Package\DFT - ODS Call_data\OLE_DST - ODS Call data.Inputs[Entrée de destination OLE DB]"
               name="Sortie de conversion de données"
               startId="Package\DFT - ODS Call_data\DCNV - resizing.Outputs[Sortie de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
+              endId="Package\DFT - ODS Call_data\DCNV - convert wait time to int.Inputs[Entrée de conversion de données]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Outputs[Sortie de conversion de données]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données3]"
               endId="Package\DFT - ODS Call_data\DCNV - resizing.Inputs[Entrée de conversion de données]"
               name="Sortie de conversion de données"
               startId="Package\DFT - ODS Call_data\DCNV - Convert to boolean.Outputs[Sortie de conversion de données]" />
             <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données4]"
+              endId="Package\DFT - ODS Call_data\DCNV - Divide Date and Time.Inputs[Data Conversion Input]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Outputs[Sortie de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données5]"
+              endId="Package\DFT - ODS Call_data\DCNV -convert call type to int.Inputs[Entrée de conversion de données]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - ODS Call_data\DCNV -convert call duration to int.Outputs[Sortie de conversion de données]" />
+            <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie de source OLE DB]"
               endId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Inputs[Entrée de conversion de données]"
               name="Sortie de source OLE DB"
               startId="Package\DFT - ODS Call_data\OLE_SRC- STA Call data.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Unir tout sortie 1]"
+              endId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB]"
+              name="Unir tout sortie 1"
+              startId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1465,61 +2872,199 @@
     design-time-name="Package\DFT - ODS Call_data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="133.333333333334,42"
-          Id="Package\DFT - ODS Call_data\DER - SLA"
-          TopLeft="305,441" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\DFT - ODS Call_data\DCNV - resizing"
-          TopLeft="290.277777777778,648.111111111111" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Convert to boolean"
-          TopLeft="263.277777777778,546.111111111111" />
-        <NodeLayout
-          Size="209.333333333334,42"
-          Id="Package\DFT - ODS Call_data\OLE_DST - ODS Call data"
-          TopLeft="266.930555508989,750.111111111111" />
-        <NodeLayout
-          Size="240,42"
-          Id="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject"
-          TopLeft="667.5,280.5" />
-        <NodeLayout
-          Size="165.333333333334,42"
-          Id="Package\DFT - ODS Call_data\DER-Date rejects"
-          TopLeft="703,105.5" />
-        <NodeLayout
-          Size="225.333333333334,42"
+          Size="221.333333333334,42.6666666666667"
           Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
-          TopLeft="264,214.5" />
+          TopLeft="90.9881042240277,132.394737743605" />
         <NodeLayout
-          Size="185.333333333334,42"
-          Id="Package\DFT - ODS Call_data\DCNV - Convert to int"
-          TopLeft="285,334.5" />
+          Size="237.333333333334,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DCNV -convert call duration to int"
+          TopLeft="48.1488086230876,191.01252971206" />
         <NodeLayout
-          Size="225.333333333334,42"
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DCNV - convert wait time to int"
+          TopLeft="34.7440519071227,331.581450183703" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DER-Date rejects"
+          TopLeft="446.684536519416,99.8959900364684" />
+        <NodeLayout
+          Size="205.333333333334,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\OLE_DST - ODS Call data"
+          TopLeft="34.2758052564023,608.544696625382" />
+        <NodeLayout
+          Size="185.333333333334,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DER- wait time rejects"
+          TopLeft="462.236093835079,413.263153357189" />
+        <NodeLayout
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DER- call duration rejects"
+          TopLeft="464.041647174086,190.43859440025" />
+        <NodeLayout
+          Size="236,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject"
+          TopLeft="897.355161996442,217.563492754522" />
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DCNV - Convert to boolean"
+          TopLeft="27.5575514717531,464.461989200585" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DCNV - resizing"
+          TopLeft="49.7063612124279,530.296576063839" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DER - SLA"
+          TopLeft="64.2797739174928,403.596491638753" />
+        <NodeLayout
+          Size="218.666666666667,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DCNV -convert call type to int"
+          TopLeft="28,267.819545931575" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
           Id="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date"
-          TopLeft="272,107.5" />
+          TopLeft="88.5416761195899,69.0864665871865" />
         <NodeLayout
           Size="205.333333333334,42"
           Id="Package\DFT - ODS Call_data\OLE_SRC- STA Call data"
-          TopLeft="282,5.5" />
+          TopLeft="89.6131050901573,13.2218044264943" />
+        <NodeLayout
+          Size="124,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\All -reject"
+          TopLeft="739.38885718667,237.649120197677" />
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\DFT - ODS Call_data\DER- call type rejects"
+          TopLeft="381.680540291179,313.368417611909" />
         <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie de source OLE DB]"
-          TopLeft="384.5,47.5">
+          Id="Package\DFT - ODS Call_data.Paths[Unir tout sortie 1]"
+          TopLeft="863.38885718667,258.98245353101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="33.9663048097724,-20.0856274431548"
               Start="0,0"
-              End="0,52.5">
+              End="26.4663048097724,-20.0856274431548">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="12.9831524048862,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.9831524048862,0"
+                    Point2="16.9831524048862,0"
+                    Point3="16.9831524048862,-4" />
+                  <mssgle:LineSegment
+                    End="16.9831524048862,-16.0856274431548" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.9831524048862,-16.0856274431548"
+                    Point2="16.9831524048862,-20.0856274431548"
+                    Point3="20.9831524048862,-20.0856274431548" />
+                  <mssgle:LineSegment
+                    End="26.4663048097724,-20.0856274431548" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de source OLE DB]"
+          TopLeft="89.6131050901573,34.2218044264943">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1.07142897056738,50.4202177162478"
+              Start="0,0"
+              End="-8.57142897056738,50.4202177162478">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-19.5714289705674,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.5714289705674,0"
+                    Point2="-23.5714289705674,0"
+                    Point3="-23.5714289705674,4" />
+                  <mssgle:LineSegment
+                    End="-23.5714289705674,46.4202177162478" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.5714289705674,46.4202177162478"
+                    Point2="-23.5714289705674,50.4202177162478"
+                    Point3="-19.5714289705674,50.4202177162478" />
+                  <mssgle:LineSegment
+                    End="-8.57142897056738,50.4202177162478" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données5]"
+          TopLeft="166.815475289754,233.679196378727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.4821419564209,34.1403495528484"
+              Start="0,0"
+              End="-29.4821419564209,26.6403495528484">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0701747764242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0701747764242"
+                    Point2="0,17.0701747764242"
+                    Point3="-4,17.0701747764242" />
+                  <mssgle:LineSegment
+                    End="-25.4821419564209,17.0701747764242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.4821419564209,17.0701747764242"
+                    Point2="-29.4821419564209,17.0701747764242"
+                    Point3="-29.4821419564209,21.0701747764242" />
+                  <mssgle:LineSegment
+                    End="-29.4821419564209,26.6403495528484" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données4]"
+          TopLeft="88.5416761195899,90.4197999205199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="2.44642810443779,63.3082711564185"
+              Start="0,0"
+              End="-5.05357189556221,63.3082711564185">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,59.3082711564185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,59.3082711564185"
+                    Point2="-22.5,63.3082711564185"
+                    Point3="-18.5,63.3082711564185" />
+                  <mssgle:LineSegment
+                    End="-5.05357189556221,63.3082711564185" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1530,18 +3075,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données3]"
-          TopLeft="369.277777777778,588.111111111111">
+          TopLeft="129.965289675424,507.128655867251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,23.1679201965881"
               Start="0,0"
-              End="0,52.5">
+              End="0,15.6679201965881">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,15.6679201965881" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1552,18 +3097,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
-          TopLeft="370.437499976717,690.111111111111">
+          TopLeft="28,289.152879264908">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="6.74405190712272,63.7619042521277"
               Start="0,0"
-              End="0,52.5">
+              End="-0.755948092877276,63.7619042521277">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,59.7619042521277" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,59.7619042521277"
+                    Point2="-22.5,63.7619042521277"
+                    Point3="-18.5,63.7619042521277" />
+                  <mssgle:LineSegment
+                    End="-0.755948092877276,63.7619042521277" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1574,18 +3131,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
-          TopLeft="374.5,376.5">
+          TopLeft="127.706361212428,572.963242730506">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.5"
+              EndConnector="9.23611071064106,35.5814538948759"
               Start="0,0"
-              End="0,57">
+              End="9.23611071064106,28.0814538948759">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57" />
+                    End="0,13.790726947438" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.790726947438"
+                    Point2="0,17.790726947438"
+                    Point3="4,17.790726947438" />
+                  <mssgle:LineSegment
+                    End="5.23611071064106,17.790726947438" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.23611071064106,17.790726947438"
+                    Point2="9.23611071064106,17.790726947438"
+                    Point3="9.23611071064106,21.790726947438" />
+                  <mssgle:LineSegment
+                    End="9.23611071064106,28.0814538948759" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1596,18 +3165,132 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données]"
-          TopLeft="380.5,149.5">
+          TopLeft="111.188496351567,374.248116850369">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65"
+              EndConnector="19.0912775659257,29.3483747883832"
               Start="0,0"
-              End="0,57.5">
+              End="19.0912775659257,21.8483747883832">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.5" />
+                    End="0,7.86350285217839" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.86350285217839"
+                    Point2="0,11.8635028521784"
+                    Point3="4,11.8635028521784" />
+                  <mssgle:LineSegment
+                    End="15.0912775659257,11.8635028521784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.0912775659257,11.8635028521784"
+                    Point2="19.0912775659257,11.8635028521784"
+                    Point3="19.0912775659257,15.8635028521784" />
+                  <mssgle:LineSegment
+                    End="19.0912775659257,21.8483747883832" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée3]"
+          TopLeft="473.013873624513,313.368417611909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="309.041650228824,-33.0526307475647"
+              Start="0,0"
+              End="309.041650228824,-25.5526307475647">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-15.578946875946" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-15.578946875946"
+                    Point2="0,-19.578946875946"
+                    Point3="4,-19.578946875946" />
+                  <mssgle:LineSegment
+                    End="305.041650228824,-19.578946875946" />
+                  <mssgle:CubicBezierSegment
+                    Point1="305.041650228824,-19.578946875946"
+                    Point2="309.041650228824,-19.578946875946"
+                    Point3="309.041650228824,-23.578946875946" />
+                  <mssgle:LineSegment
+                    End="309.041650228824,-25.5526307475647" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée2]"
+          TopLeft="584.458316057301,413.263153357189">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="236.263874462702,-132.947366492845"
+              Start="0,0"
+              End="236.263874462702,-125.447366492845">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-62.1281703165542" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-62.1281703165542"
+                    Point2="0,-66.1281703165542"
+                    Point3="4,-66.1281703165542" />
+                  <mssgle:LineSegment
+                    End="232.263874462702,-66.1281703165542" />
+                  <mssgle:CubicBezierSegment
+                    Point1="232.263874462702,-66.1281703165542"
+                    Point2="236.263874462702,-66.1281703165542"
+                    Point3="236.263874462702,-70.1281703165542" />
+                  <mssgle:LineSegment
+                    End="236.263874462702,-125.447366492845" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée1]"
+          TopLeft="528.017869852749,142.562656703135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="254.037654000587,95.0864634945421"
+              Start="0,0"
+              End="254.037654000587,87.5864634945421">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.3251025795696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.3251025795696"
+                    Point2="0,56.3251025795696"
+                    Point3="4,56.3251025795696" />
+                  <mssgle:LineSegment
+                    End="250.037654000587,56.3251025795696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="250.037654000587,56.3251025795696"
+                    Point2="254.037654000587,56.3251025795696"
+                    Point3="254.037654000587,60.3251025795696" />
+                  <mssgle:LineSegment
+                    End="254.037654000587,87.5864634945421" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1618,18 +3301,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée]"
-          TopLeft="786.5,147.5">
+          TopLeft="664.708313840752,211.771927733583">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,133"
+              EndConnector="74.6805433459174,47.2105257974272"
               Start="0,0"
-              End="0,125.5">
+              End="67.1805433459174,47.2105257974272">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,125.5" />
+                    End="33.3402716729587,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.3402716729587,0"
+                    Point2="37.3402716729587,0"
+                    Point3="37.3402716729587,4" />
+                  <mssgle:LineSegment
+                    End="37.3402716729587,43.2105257974272" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.3402716729587,43.2105257974272"
+                    Point2="37.3402716729587,47.2105257974272"
+                    Point3="41.3402716729587,47.2105257974272" />
+                  <mssgle:LineSegment
+                    End="67.1805433459174,47.2105257974272" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1639,43 +3334,157 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données]"
-          TopLeft="497,127.5">
+          Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données3]"
+          TopLeft="309.875009452923,90.4197999205198">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="206,0"
+              EndConnector="136.809527066492,30.8095234492819"
               Start="0,0"
-              End="198.5,0">
+              End="129.309527066492,30.8095234492819">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="198.5,0" />
+                    End="64.4047635332462,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.4047635332462,0"
+                    Point2="68.4047635332462,0"
+                    Point3="68.4047635332462,4" />
+                  <mssgle:LineSegment
+                    End="68.4047635332462,26.8095234492819" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.4047635332462,26.8095234492819"
+                    Point2="68.4047635332462,30.8095234492819"
+                    Point3="72.4047635332462,30.8095234492819" />
+                  <mssgle:LineSegment
+                    End="129.309527066492,30.8095234492819" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="7.7417578125,5,183.016484375,10.3349609375"
+              BoundingBox="-23.1034786542538,-16.3349609375,183.016484375,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données2]"
+          TopLeft="183.632940796012,374.248116850369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="341.714264150178,39.0150365068196"
+              Start="0,0"
+              End="341.714264150178,31.5150365068196">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.470869886967" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.470869886967"
+                    Point2="0,19.470869886967"
+                    Point3="4,19.470869886967" />
+                  <mssgle:LineSegment
+                    End="337.714264150178,19.470869886967" />
+                  <mssgle:CubicBezierSegment
+                    Point1="337.714264150178,19.470869886967"
+                    Point2="341.714264150178,19.470869886967"
+                    Point3="341.714264150178,23.470869886967" />
+                  <mssgle:LineSegment
+                    End="341.714264150178,31.5150365068196" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="79.3488898875891,24.470869886967,183.016484375,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données1]"
+          TopLeft="246.666666666667,289.152879264908">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.013873624513,45.5488716803335"
+              Start="0,0"
+              End="127.513873624513,45.5488716803335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.5069368122563,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.5069368122563,0"
+                    Point2="67.5069368122563,0"
+                    Point3="67.5069368122563,4" />
+                  <mssgle:LineSegment
+                    End="67.5069368122563,41.5488716803335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.5069368122563,41.5488716803335"
+                    Point2="67.5069368122563,45.5488716803335"
+                    Point3="71.5069368122563,45.5488716803335" />
+                  <mssgle:LineSegment
+                    End="127.513873624513,45.5488716803335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.0013053752437,-16.3349609375,183.016484375,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données]"
+          TopLeft="285.482141956421,212.058895389488">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178.559505217665,0"
+              Start="0,0"
+              End="171.059505217665,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="171.059505217665,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.97848957866748,5,183.016484375,10.3349609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Derived Column Output]"
-          TopLeft="370.388888888889,483">
+          TopLeft="64.2797739174928,424.929824972086">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63.1111111111111"
+              EndConnector="67.9444442209269,39.5321642284986"
               Start="0,0"
-              End="0,55.6111111111111">
+              End="67.9444442209269,32.0321642284986">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.6111111111111" />
+                    End="63.9444442209269,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.9444442209269,0"
+                    Point2="67.9444442209269,0"
+                    Point3="67.9444442209269,4" />
+                  <mssgle:LineSegment
+                    End="67.9444442209269,32.0321642284986" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1686,18 +3495,24 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Data Conversion Output]"
-          TopLeft="377,256.5">
+          TopLeft="90.9881042240277,159.505848854716">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,78"
+              EndConnector="75.8273710657266,31.5066808573439"
               Start="0,0"
-              End="0,70.5">
+              End="75.8273710657266,24.0066808573439">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.5" />
+                    End="71.8273710657266,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.8273710657266,0"
+                    Point2="75.8273710657266,0"
+                    Point3="75.8273710657266,4" />
+                  <mssgle:LineSegment
+                    End="75.8273710657266,24.0066808573439" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

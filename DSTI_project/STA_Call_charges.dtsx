@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{2CE55FCC-2FEF-4254-B9D9-973155742819}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{2AE4A9BC-3FC0-42CB-A918-15AA23029FD1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Type "
-              DTS:DTSID="{7D4D9A53-D946-4675-A7B1-CA991ECA1E9C}"
+              DTS:DTSID="{20093F3D-C506-42CE-AAD6-BA5170888F4D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2018)"
-              DTS:DTSID="{3EE2DA21-00D3-4D9A-99D0-CB957DA8B122}"
+              DTS:DTSID="{44AA2B43-9BD7-45B0-9B0F-6914B123ECAE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2019)"
-              DTS:DTSID="{A1045152-801A-4BC3-8449-659C8F061F6B}"
+              DTS:DTSID="{6960FDB2-100E-42A9-B165-E9E08AC39E08}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2020)"
-              DTS:DTSID="{CACD72EE-318A-44E7-96B2-D2D9896D1725}"
+              DTS:DTSID="{4FDF71C6-9174-4057-8BDA-55174619FA41}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2021)"
-              DTS:DTSID="{31F9D348-DD4A-49F1-9A54-3006B6162067}"
+              DTS:DTSID="{8983F632-0FC4-46F5-AB74-0D29E33BA7B2}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>

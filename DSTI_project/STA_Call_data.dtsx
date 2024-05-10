@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{138E9F9F-F880-42BC-8624-7621CD3F4DF2}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{C65B28E3-55B1-4BED-8FDF-66EC2F797167}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -131,7 +131,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Calls Data" />
+              Folder="C:\Users\kacik\Documents\data\Calls Data" />
             <FEFEProperty
               FileSpec="*.csv" />
             <FEFEProperty
@@ -702,11 +702,11 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="227,43"
+          Size="226.666666666667,42.6666666666667"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data"
           TopLeft="42.5416567480815,24.4736820093649" />
         <NodeLayout
-          Size="177,42"
+          Size="177.333333333334,42"
           Id="Package\FELC - Call Data folder\SQL - Insert FileInfo"
           TopLeft="69.3749892991044,105.298242774311" />
         <EdgeLayout
@@ -734,12 +734,12 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="312,199"
+          PanelSize="312,198.666666666667"
           Size="312,242"
           Id="Package\FELC - Call Data folder"
           TopLeft="141.999990612269,114.842104474345" />
         <NodeLayout
-          Size="219,42"
+          Size="218.666666666667,42"
           Id="Package\SQL - TRUNCATE Call Data"
           TopLeft="188.625001536682,24.8947367444428" />
         <EdgeLayout
@@ -771,7 +771,7 @@
     design-time-name="Package\FELC - Call Data folder\DFT_STA_Call data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="190,42.6666666666667"
           Id="Package\FELC - Call Data folder\DFT_STA_Call data\FF_SRC- Call data"
@@ -803,9 +803,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -827,9 +825,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

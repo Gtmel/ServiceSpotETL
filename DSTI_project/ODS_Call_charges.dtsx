@@ -11,11 +11,23 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{C471AB29-1283-4CE3-BA8C-947E10D720FC}">
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{5CDC4D57-21EB-47AF-AE9C-6C1F9811552C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.SS_ADM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DC4FDEF8-4FB9-4C1E-9BEA-A8D751B58A35}"
+      DTS:ObjectName="localhost.SS_ADM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ADM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Call_data-{DC4FDEF8-4FB9-4C1E-9BEA-A8D751B58A35}localhost.SS_ADM;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 1]"
       DTS:CreationName="OLEDB"
@@ -99,7 +111,7 @@
                       refId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="RedirectRow"
                       lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]"
                       name="Cost_per_min_R"
                       precision="4"
@@ -308,6 +320,157 @@
                       refId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER-cost per min int  rejects"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Inputs[Entrée de colonne dérivée].Columns[Cost_per_min]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Cost_per_min"
+                      lineageId="Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
+                      name="RejectDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="12"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">"Cost_per_min"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Cost_per_min"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="130"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">"The value " + (DT_WSTR,100)#{Package\DFT - ODS Call_charges\UPVT - Call charges.Outputs[Sortie Unpivot].Columns[Cost_per_min]} + " Is not a valid nume"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The value " + (DT_WSTR,100)Cost_per_min + " Is not a valid nume"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -563,12 +726,6 @@ where [refTable].[CallTypeLabel] = ?</property>
                       externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Cost_per_min]"
                       lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[Cost_per_min_R]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[CallTypeID_int]"
-                      cachedDataType="ui4"
-                      cachedName="CallTypeID_int"
-                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
-                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallTypeID_int]" />
-                    <inputColumn
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[CallType_R]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -576,6 +733,12 @@ where [refTable].[CallTypeLabel] = ?</property>
                       cachedName="CallType_R"
                       externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeLabel]"
                       lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallType_R]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].Columns[CallTypeID_int]"
+                      cachedDataType="ui4"
+                      cachedName="CallTypeID_int"
+                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
+                      lineageId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie de conversion de données].Columns[CallTypeID_int]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -620,6 +783,155 @@ where [refTable].[CallTypeLabel] = ?</property>
                       refId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="OLE_DST -ADM Technical reject"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Technical_reject]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.SS_ADM]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.SS_ADM]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].Columns[RejectDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RejectDate"
+                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDate]"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDate]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectPackageAndTask]"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectPackageAndTask]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="130"
+                      cachedName="RejectDescription"
+                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDescription]"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="RejectColumn"
+                      externalMetadataColumnId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectColumn]"
+                      lineageId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDate]"
+                      dataType="dbTimeStamp"
+                      name="RejectDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      length="205"
+                      name="RejectPackageAndTask" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectColumn]"
+                      dataType="wstr"
+                      length="13"
+                      name="RejectColumn" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDescription]"
+                      dataType="wstr"
+                      length="130"
+                      name="RejectDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1012,10 +1324,20 @@ where [refTable].[CallTypeLabel] = ?</property>
               name="Lookup Match Output"
               startId="Package\DFT - ODS Call_charges\LKP - CallType.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\DFT - ODS Call_charges.Paths[Sortie d'erreur de conversion de données]"
+              endId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Inputs[Entrée de colonne dérivée]"
+              name="Sortie d'erreur de conversion de données"
+              startId="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping.Outputs[Sortie d'erreur de conversion de données]" />
+            <path
               refId="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
               endId="Package\DFT - ODS Call_charges\LKP - CallType.Inputs[Lookup Input]"
               name="Sortie de colonne dérivée"
               startId="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée1]"
+              endId="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS Call_charges\DER-cost per min int  rejects.Outputs[Sortie de colonne dérivée]" />
             <path
               refId="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
               endId="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges.Inputs[Entrée de destination OLE DB]"
@@ -1076,11 +1398,11 @@ where [refTable].[CallTypeLabel] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="201,42"
+          Size="201.333333333334,42"
           Id="Package\DFT - ODS Call_charges"
           TopLeft="124.749994914979,173.263156354675" />
         <NodeLayout
-          Size="261,42"
+          Size="261.333333333334,42"
           Id="Package\SQL -TRUNCATE ODS Call Charges"
           TopLeft="94.99999307096,56.6315783914437" />
         <EdgeLayout
@@ -1116,59 +1438,133 @@ where [refTable].[CallTypeLabel] = ?</property>
         <NodeLayout
           Size="226,42"
           Id="Package\DFT - ODS Call_charges\OLE_DST - ODS Call charges"
-          TopLeft="140.124996284023,438.842102333284" />
+          TopLeft="43.9642862970275,495.50125024696" />
         <NodeLayout
-          Size="219,42"
+          Size="218.666666666667,42"
           Id="Package\DFT - ODS Call_charges\OLE_SRC STA Call charges"
-          TopLeft="144.249993462116,11.5263157068362" />
+          TopLeft="77.9999964237217,57.3684204666569" />
+        <NodeLayout
+          Size="178.666666666667,42"
+          Id="Package\DFT - ODS Call_charges\UPVT - Call charges"
+          TopLeft="87.1249904725704,144.912279597417" />
         <NodeLayout
           Size="298,42"
           Id="Package\DFT - ODS Call_charges\DER -  Cost remove per min &amp; Trim CallType"
-          TopLeft="104.124997848646,176.894735602543" />
+          TopLeft="71.6249993015091,239.157892813643" />
         <NodeLayout
-          Size="219,42"
+          Size="153.333333333334,42"
+          Id="Package\DFT - ODS Call_charges\LKP - CallType"
+          TopLeft="94.2499999441205,325.157891100794" />
+        <NodeLayout
+          Size="236,42.6666666666667"
+          Id="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject"
+          TopLeft="623.214257854437,363.082702999937" />
+        <NodeLayout
+          Size="214.666666666667,42.6666666666667"
+          Id="Package\DFT - ODS Call_charges\DER-cost per min int  rejects"
+          TopLeft="366.339269337644,371.629070760652" />
+        <NodeLayout
+          Size="218.666666666667,42"
           Id="Package\DFT - ODS Call_charges\DCNV - Resizing &amp; Retyping"
-          TopLeft="143.749995585531,354.157892670906" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\DFT - ODS Call_charges\UPVT - Call charges"
-          TopLeft="159.624987231568,95.6491222435804" />
+          TopLeft="97.499997653067,412.999997287989" />
         <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
-          TopLeft="253.187495934777,396.157892670906">
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie d'erreur de conversion de données]"
+          TopLeft="316.166664319734,433.999997287989">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.684209662378"
+              EndConnector="50.1726050179104,-41.0375931940037"
               Start="0,0"
-              End="0,35.184209662378">
+              End="42.6726050179104,-41.0375931940037">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.184209662378" />
+                    End="21.0863025089552,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.0863025089552,0"
+                    Point2="25.0863025089552,0"
+                    Point3="25.0863025089552,-4" />
+                  <mssgle:LineSegment
+                    End="25.0863025089552,-37.0375931940037" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.0863025089552,-37.0375931940037"
+                    Point2="25.0863025089552,-41.0375931940037"
+                    Point3="29.0863025089552,-41.0375931940037" />
+                  <mssgle:LineSegment
+                    End="42.6726050179104,-41.0375931940037" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-66.4219396785448,1,183.016484375,10.3349609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
-          TopLeft="251.124992540107,137.64912224358">
+          Id="Package\DFT - ODS Call_charges.Paths[Lookup Match Output]"
+          TopLeft="170.916666610787,367.157891100794">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.2456133589626"
+              EndConnector="35.9166643756132,45.8421061871956"
               Start="0,0"
-              End="0,31.7456133589626">
+              End="35.9166643756132,38.3421061871956">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.7456133589626" />
+                    End="0,18.9210530935978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.9210530935978"
+                    Point2="0,22.9210530935978"
+                    Point3="4,22.9210530935978" />
+                  <mssgle:LineSegment
+                    End="31.9166643756132,22.9210530935978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.9166643756132,22.9210530935978"
+                    Point2="35.9166643756132,22.9210530935978"
+                    Point3="35.9166643756132,26.9210530935978" />
+                  <mssgle:LineSegment
+                    End="35.9166643756132,38.3421061871956" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.2330545309434,27.9210530935978,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie Unpivot]"
+          TopLeft="176.458323805904,186.912279597417">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.1666754956054,52.2456132162252"
+              Start="0,0"
+              End="44.1666754956054,44.7456132162252">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1228066081126" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.1228066081126"
+                    Point2="0,26.1228066081126"
+                    Point3="4,26.1228066081126" />
+                  <mssgle:LineSegment
+                    End="40.1666754956054,26.1228066081126" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.1666754956054,26.1228066081126"
+                    Point2="44.1666754956054,26.1228066081126"
+                    Point3="44.1666754956054,30.1228066081126" />
+                  <mssgle:LineSegment
+                    End="44.1666754956054,44.7456132162252" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1179,18 +1575,30 @@ where [refTable].[CallTypeLabel] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie de source OLE DB]"
-          TopLeft="251.437490346842,53.5263157068362">
+          TopLeft="187.333329757055,99.3684204666569">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.1228065367442"
+              EndConnector="-10.8750059511513,45.5438591307606"
               Start="0,0"
-              End="0,34.6228065367442">
+              End="-10.8750059511513,38.0438591307606">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.6228065367442" />
+                    End="0,18.7719295653803" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.7719295653803"
+                    Point2="0,22.7719295653803"
+                    Point3="-4,22.7719295653803" />
+                  <mssgle:LineSegment
+                    End="-6.87500595115125,22.7719295653803" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.87500595115125,22.7719295653803"
+                    Point2="-10.8750059511513,22.7719295653803"
+                    Point3="-10.8750059511513,26.7719295653803" />
+                  <mssgle:LineSegment
+                    End="-10.8750059511513,38.0438591307606" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1199,54 +1607,106 @@ where [refTable].[CallTypeLabel] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\DFT - ODS Call_charges\LKP - CallType"
-          TopLeft="176.124996284023,260.842102333284" />
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie de conversion de données]"
+          TopLeft="206.8333309864,454.999997287989">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-49.8690446893729,40.5012529589708"
+              Start="0,0"
+              End="-49.8690446893729,33.0012529589708">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.2506264794854" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2506264794854"
+                    Point2="0,20.2506264794854"
+                    Point3="-4,20.2506264794854" />
+                  <mssgle:LineSegment
+                    End="-45.8690446893729,20.2506264794854" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-45.8690446893729,20.2506264794854"
+                    Point2="-49.8690446893729,20.2506264794854"
+                    Point3="-49.8690446893729,24.2506264794854" />
+                  <mssgle:LineSegment
+                    End="-49.8690446893729,33.0012529589708" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée1]"
+          TopLeft="581.005936004311,392.962404093985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.2083218501264,-8.54636776071499"
+              Start="0,0"
+              End="34.7083218501264,-8.54636776071499">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="17.1041609250632,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.1041609250632,0"
+                    Point2="21.1041609250632,0"
+                    Point3="21.1041609250632,-4" />
+                  <mssgle:LineSegment
+                    End="21.1041609250632,-4.54636776071499" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.1041609250632,-4.54636776071499"
+                    Point2="21.1041609250632,-8.54636776071499"
+                    Point3="25.1041609250632,-8.54636776071499" />
+                  <mssgle:LineSegment
+                    End="34.7083218501264,-8.54636776071499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_charges.Paths[Sortie de colonne dérivée]"
-          TopLeft="252.874997066335,218.894735602543">
+          TopLeft="220.624999301509,281.157892813643">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.947366730741"
+              EndConnector="-49.7083326907219,43.9999982871509"
               Start="0,0"
-              End="0,34.447366730741">
+              End="-49.7083326907219,36.4999982871509">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.447366730741" />
+                    End="0,17.9999991435755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9999991435755"
+                    Point2="0,21.9999991435755"
+                    Point3="-4,21.9999991435755" />
+                  <mssgle:LineSegment
+                    End="-45.7083326907219,21.9999991435755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-45.7083326907219,21.9999991435755"
+                    Point2="-49.7083326907219,21.9999991435755"
+                    Point3="-49.7083326907219,25.9999991435755" />
+                  <mssgle:LineSegment
+                    End="-49.7083326907219,36.4999982871509" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_charges.Paths[Lookup Match Output]"
-          TopLeft="252.937495934777,302.842102333284">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.315790337622"
-              Start="0,0"
-              End="0,43.815790337622">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.815790337622" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.103207668811,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1284,7 +1744,7 @@ where [refTable].[CallTypeLabel] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1294,10 +1754,23 @@ where [refTable].[CallTypeLabel] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS Call_charges\OLE_DST -ADM Technical reject">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

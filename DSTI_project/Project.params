@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\PC\Documents\MSc Data Analytics\MSc Courses\TU2 Data Management (DM) &amp; Databases (DB)\TU2_DB_Datawarehousing &amp; ETL\Data_Project\</SSIS:Property>
+        SSIS:Name="Value">C:\Users\kacik\Documents\data\</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

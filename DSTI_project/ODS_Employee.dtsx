@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="ODS_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{A4DD2492-0DB4-4B83-A9ED-38CEF15D0E7C}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{4AD13506-4FBC-44AF-8673-E77757682F63}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -773,8 +773,8 @@ where [refTable].[StateCD] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT - ODS Employee\OLE_DST - ODS Employee.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.SS_ODS 3]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.SS_ODS 3]"
+                  connectionManagerID="{A1D7A931-EB8F-407E-866C-1C8179DADA26}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.SS_ODS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -819,13 +819,13 @@ where [refTable].[StateCD] = ?</property>
                       externalMetadataColumnId="Package\DFT - ODS Employee\OLE_DST - ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[ManagerName]"
                       lineageId="Package\DFT - ODS Employee\DCNV - Resizing.Outputs[Data Conversion Output].Columns[ManagerName_R]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Employee\OLE_DST - ODS Employee.Inputs[OLE DB Destination Input].Columns[State_name_R]"
+                      refId="Package\DFT - ODS Employee\OLE_DST - ODS Employee.Inputs[OLE DB Destination Input].Columns[State_str]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="25"
-                      cachedName="State_name_R"
+                      cachedLength="2"
+                      cachedName="State_str"
                       externalMetadataColumnId="Package\DFT - ODS Employee\OLE_DST - ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                      lineageId="Package\DFT - ODS Employee\DCNV - Resizing.Outputs[Data Conversion Output].Columns[State_name_R]" />
+                      lineageId="Package\DFT - ODS Employee\DCNV - State to STR.Outputs[Data Conversion Output].Columns[State_str]" />
                     <inputColumn
                       refId="Package\DFT - ODS Employee\OLE_DST - ODS Employee.Inputs[OLE DB Destination Input].Columns[Region_R]"
                       cachedCodepage="1252"
@@ -1200,13 +1200,13 @@ where [refTable].[StateCD] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="213.333333333334,42"
-          Id="Package\DFT - ODS Employee\OLE_SRC - STA Employee"
-          TopLeft="145,43" />
-        <NodeLayout
           Size="182,42"
           Id="Package\DFT - ODS Employee\DCNV - State to STR"
           TopLeft="159,256" />
+        <NodeLayout
+          Size="213.333333333334,42"
+          Id="Package\DFT - ODS Employee\OLE_SRC - STA Employee"
+          TopLeft="145,43" />
         <NodeLayout
           Size="165.333333333334,42"
           Id="Package\DFT - ODS Employee\LKP - STA States"
