@@ -11,24 +11,10 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_Call_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="70"
-  DTS:VersionGUID="{DBD3AB73-3922-4C2E-9A02-B80F81586F2A}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{E06632DE-7A77-4E44-8CA3-A4F7C86ED9D9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.SS_ADM]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{DC4FDEF8-4FB9-4C1E-9BEA-A8D751B58A35}"
-      DTS:ObjectName="localhost.SS_ADM">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ADM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Call_data-{DC4FDEF8-4FB9-4C1E-9BEA-A8D751B58A35}localhost.SS_ADM;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -2384,8 +2370,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.SS_ADM]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.SS_ADM]"
+                  connectionManagerID="{4B90492A-6DD7-46B4-958D-CD752F21F988}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost SS_ADM]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
               </connections>
@@ -2417,6 +2403,13 @@
                       cachedName="RejectDescription"
                       externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDescription]"
                       lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectDescription]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RejectColumn"
+                      externalMetadataColumnId="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectColumn]"
+                      lineageId="Package\DFT - ODS Call_data\All -reject.Outputs[Unir tout sortie 1].Columns[RejectColumn]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2733,24 +2726,24 @@
               startId="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date.Outputs[Sortie d'erreur de conversion de données]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée3]"
-              endId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2]"
-              name="Sortie de colonne dérivée"
-              startId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée]" />
-            <path
-              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée2]"
               endId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 3]"
               name="Sortie de colonne dérivée"
               startId="Package\DFT - ODS Call_data\DER- wait time rejects.Outputs[Sortie de colonne dérivée]" />
             <path
-              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée]"
-              endId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1]"
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée2]"
+              endId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 2]"
               name="Sortie de colonne dérivée"
-              startId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée]" />
+              startId="Package\DFT - ODS Call_data\DER- call type rejects.Outputs[Sortie de colonne dérivée]" />
             <path
-              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée1]"
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée]"
               endId="Package\DFT - ODS Call_data\All -reject.Inputs[Unir tout entrée 1]"
               name="Sortie de colonne dérivée"
               startId="Package\DFT - ODS Call_data\DER-Date rejects.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée1]"
+              endId="Package\DFT - ODS Call_data\All -reject.Inputs[Entrée Union All 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS Call_data\DER- call duration rejects.Outputs[Sortie de colonne dérivée]" />
             <path
               refId="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données]"
               endId="Package\DFT - ODS Call_data\DER - SLA.Inputs[Derived Column Input]"
@@ -2836,7 +2829,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.666666666667,42"
+          Size="183,42"
           Id="Package\DFT - ODS Call_data"
           TopLeft="212.499989382923,174.052629843561" />
         <NodeLayout
@@ -2874,95 +2867,83 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="221.333333333334,42.6666666666667"
+          Size="221,43"
           Id="Package\DFT - ODS Call_data\DCNV - Divide Date and Time"
-          TopLeft="90.9881042240277,132.394737743605" />
+          TopLeft="91.9881042240277,126.394737743605" />
         <NodeLayout
-          Size="237.333333333334,42.6666666666667"
+          Size="237,43"
           Id="Package\DFT - ODS Call_data\DCNV -convert call duration to int"
-          TopLeft="48.1488086230876,191.01252971206" />
+          TopLeft="81.1488086230876,203.01252971206" />
         <NodeLayout
-          Size="225.333333333334,42.6666666666667"
+          Size="225,43"
           Id="Package\DFT - ODS Call_data\DCNV - convert wait time to int"
-          TopLeft="34.7440519071227,331.581450183703" />
+          TopLeft="82.7440519071227,338.581450183703" />
         <NodeLayout
-          Size="162.666666666667,42.6666666666667"
+          Size="163,43"
           Id="Package\DFT - ODS Call_data\DER-Date rejects"
-          TopLeft="446.684536519416,99.8959900364684" />
+          TopLeft="490.684536519416,70.8959900364684" />
         <NodeLayout
-          Size="205.333333333334,42.6666666666667"
+          Size="205,43"
           Id="Package\DFT - ODS Call_data\OLE_DST - ODS Call data"
-          TopLeft="34.2758052564023,608.544696625382" />
+          TopLeft="63.2758052564023,629.544696625382" />
         <NodeLayout
-          Size="185.333333333334,42.6666666666667"
+          Size="185,42"
           Id="Package\DFT - ODS Call_data\DER- wait time rejects"
-          TopLeft="462.236093835079,413.263153357189" />
+          TopLeft="467.236093835079,380.263153357189" />
         <NodeLayout
-          Size="200.666666666667,42.6666666666667"
+          Size="201,43"
           Id="Package\DFT - ODS Call_data\DER- call duration rejects"
-          TopLeft="464.041647174086,190.43859440025" />
+          TopLeft="453.041647174086,205.43859440025" />
         <NodeLayout
-          Size="236,42.6666666666667"
+          Size="236,43"
           Id="Package\DFT - ODS Call_data\OLE_DST -ADM Technical reject"
-          TopLeft="897.355161996442,217.563492754522" />
+          TopLeft="896.355161996442,232.563492754522" />
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
+          Size="209,43"
           Id="Package\DFT - ODS Call_data\DCNV - Convert to boolean"
-          TopLeft="27.5575514717531,464.461989200585" />
+          TopLeft="64.5575514717531,479.461989200585" />
         <NodeLayout
-          Size="156,42.6666666666667"
+          Size="156,43"
           Id="Package\DFT - ODS Call_data\DCNV - resizing"
-          TopLeft="49.7063612124279,530.296576063839" />
+          TopLeft="94.7063612124279,551.296576063839" />
         <NodeLayout
-          Size="132,42.6666666666667"
+          Size="132,42"
           Id="Package\DFT - ODS Call_data\DER - SLA"
-          TopLeft="64.2797739174928,403.596491638753" />
+          TopLeft="101.279773917493,411.596491638753" />
         <NodeLayout
-          Size="218.666666666667,42.6666666666667"
+          Size="219,43"
           Id="Package\DFT - ODS Call_data\DCNV -convert call type to int"
-          TopLeft="28,267.819545931575" />
+          TopLeft="89,270.819545931575" />
         <NodeLayout
-          Size="221.333333333334,42.6666666666667"
+          Size="221,43"
           Id="Package\DFT - ODS Call_data\DCNV - calltimestamp to Date"
           TopLeft="88.5416761195899,69.0864665871865" />
         <NodeLayout
-          Size="205.333333333334,42"
+          Size="205,42"
           Id="Package\DFT - ODS Call_data\OLE_SRC- STA Call data"
           TopLeft="89.6131050901573,13.2218044264943" />
         <NodeLayout
-          Size="124,42.6666666666667"
+          Size="124,43"
           Id="Package\DFT - ODS Call_data\All -reject"
           TopLeft="739.38885718667,237.649120197677" />
         <NodeLayout
-          Size="182.666666666667,42.6666666666667"
+          Size="183,43"
           Id="Package\DFT - ODS Call_data\DER- call type rejects"
-          TopLeft="381.680540291179,313.368417611909" />
+          TopLeft="462.680540291179,278.368417611909" />
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Unir tout sortie 1]"
-          TopLeft="863.38885718667,258.98245353101">
+          TopLeft="863.38885718667,256.6063064761">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="33.9663048097724,-20.0856274431548"
+              EndConnector="32.9663048097721,0"
               Start="0,0"
-              End="26.4663048097724,-20.0856274431548">
+              End="25.4663048097721,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="12.9831524048862,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.9831524048862,0"
-                    Point2="16.9831524048862,0"
-                    Point3="16.9831524048862,-4" />
-                  <mssgle:LineSegment
-                    End="16.9831524048862,-16.0856274431548" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.9831524048862,-16.0856274431548"
-                    Point2="16.9831524048862,-20.0856274431548"
-                    Point3="20.9831524048862,-20.0856274431548" />
-                  <mssgle:LineSegment
-                    End="26.4663048097724,-20.0856274431548" />
+                    End="25.4663048097721,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3007,30 +2988,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données5]"
-          TopLeft="166.815475289754,233.679196378727">
+          TopLeft="199.074404311544,246.01252971206">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-29.4821419564209,34.1403495528484"
+              EndConnector="0,24.807016219515"
               Start="0,0"
-              End="-29.4821419564209,26.6403495528484">
+              End="0,17.307016219515">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.0701747764242" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.0701747764242"
-                    Point2="0,17.0701747764242"
-                    Point3="-4,17.0701747764242" />
-                  <mssgle:LineSegment
-                    End="-25.4821419564209,17.0701747764242" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-25.4821419564209,17.0701747764242"
-                    Point2="-29.4821419564209,17.0701747764242"
-                    Point3="-29.4821419564209,21.0701747764242" />
-                  <mssgle:LineSegment
-                    End="-29.4821419564209,26.6403495528484" />
+                    End="0,17.307016219515" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3041,13 +3010,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données4]"
-          TopLeft="88.5416761195899,90.4197999205199">
+          TopLeft="88.5416761195899,96.4197999205198">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="2.44642810443779,63.3082711564185"
+              EndConnector="3.44642810443779,45.6416044897518"
               Start="0,0"
-              End="-5.05357189556221,63.3082711564185">
+              End="-4.05357189556221,45.6416044897518">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3058,13 +3027,13 @@
                     Point2="-22.5,0"
                     Point3="-22.5,4" />
                   <mssgle:LineSegment
-                    End="-22.5,59.3082711564185" />
+                    End="-22.5,41.6416044897518" />
                   <mssgle:CubicBezierSegment
-                    Point1="-22.5,59.3082711564185"
-                    Point2="-22.5,63.3082711564185"
-                    Point3="-18.5,63.3082711564185" />
+                    Point1="-22.5,41.6416044897518"
+                    Point2="-22.5,45.6416044897518"
+                    Point3="-18.5,45.6416044897518" />
                   <mssgle:LineSegment
-                    End="-5.05357189556221,63.3082711564185" />
+                    End="-4.05357189556221,45.6416044897518" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3075,18 +3044,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données3]"
-          TopLeft="129.965289675424,507.128655867251">
+          TopLeft="170.881956342091,522.461989200585">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.1679201965881"
+              EndConnector="0,28.834586863254"
               Start="0,0"
-              End="0,15.6679201965881">
+              End="0,21.334586863254">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.6679201965881" />
+                    End="0,21.334586863254" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3097,30 +3066,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données2]"
-          TopLeft="28,289.152879264908">
+          TopLeft="196.872025953561,313.819545931575">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="6.74405190712272,63.7619042521277"
+              EndConnector="0,24.761904252128"
               Start="0,0"
-              End="-0.755948092877276,63.7619042521277">
+              End="0,17.261904252128">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.5,0"
-                    Point2="-22.5,0"
-                    Point3="-22.5,4" />
-                  <mssgle:LineSegment
-                    End="-22.5,59.7619042521277" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.5,59.7619042521277"
-                    Point2="-22.5,63.7619042521277"
-                    Point3="-18.5,63.7619042521277" />
-                  <mssgle:LineSegment
-                    End="-0.755948092877276,63.7619042521277" />
+                    End="0,17.261904252128" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3131,30 +3088,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données1]"
-          TopLeft="127.706361212428,572.963242730506">
+          TopLeft="169.241083234415,594.296576063839">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.23611071064106,35.5814538948759"
+              EndConnector="0,35.248120561543"
               Start="0,0"
-              End="9.23611071064106,28.0814538948759">
+              End="0,27.748120561543">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.790726947438" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.790726947438"
-                    Point2="0,17.790726947438"
-                    Point3="4,17.790726947438" />
-                  <mssgle:LineSegment
-                    End="5.23611071064106,17.790726947438" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.23611071064106,17.790726947438"
-                    Point2="9.23611071064106,17.790726947438"
-                    Point3="9.23611071064106,21.790726947438" />
-                  <mssgle:LineSegment
-                    End="9.23611071064106,28.0814538948759" />
+                    End="0,27.748120561543" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3165,30 +3110,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de conversion de données]"
-          TopLeft="111.188496351567,374.248116850369">
+          TopLeft="159.077385240456,381.581450183703">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.0912775659257,29.3483747883832"
+              EndConnector="8.20238867703679,30.01504145505"
               Start="0,0"
-              End="19.0912775659257,21.8483747883832">
+              End="8.20238867703679,22.51504145505">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.86350285217839" />
+                    End="0,8.13317651051446" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,7.86350285217839"
-                    Point2="0,11.8635028521784"
-                    Point3="4,11.8635028521784" />
+                    Point1="0,8.13317651051446"
+                    Point2="0,12.1331765105145"
+                    Point3="4,12.1331765105145" />
                   <mssgle:LineSegment
-                    End="15.0912775659257,11.8635028521784" />
+                    End="4.20238867703679,12.1331765105145" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.0912775659257,11.8635028521784"
-                    Point2="19.0912775659257,11.8635028521784"
-                    Point3="19.0912775659257,15.8635028521784" />
+                    Point1="4.20238867703679,12.1331765105145"
+                    Point2="8.20238867703679,12.1331765105145"
+                    Point3="8.20238867703679,16.1331765105145" />
                   <mssgle:LineSegment
-                    End="19.0912775659257,21.8483747883832" />
+                    End="8.20238867703679,22.51504145505" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3199,30 +3144,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée3]"
-          TopLeft="473.013873624513,313.368417611909">
+          TopLeft="559.736093835079,380.263153357189">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="309.041650228824,-33.0526307475647"
+              EndConnector="241.652763351591,-99.614033159512"
               Start="0,0"
-              End="309.041650228824,-25.5526307475647">
+              End="241.652763351591,-92.114033159512">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-15.578946875946" />
+                    End="0,-45.807016579756" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-15.578946875946"
-                    Point2="0,-19.578946875946"
-                    Point3="4,-19.578946875946" />
+                    Point1="0,-45.807016579756"
+                    Point2="0,-49.807016579756"
+                    Point3="4,-49.807016579756" />
                   <mssgle:LineSegment
-                    End="305.041650228824,-19.578946875946" />
+                    End="237.652763351591,-49.807016579756" />
                   <mssgle:CubicBezierSegment
-                    Point1="305.041650228824,-19.578946875946"
-                    Point2="309.041650228824,-19.578946875946"
-                    Point3="309.041650228824,-23.578946875946" />
+                    Point1="237.652763351591,-49.807016579756"
+                    Point2="241.652763351591,-49.807016579756"
+                    Point3="241.652763351591,-53.807016579756" />
                   <mssgle:LineSegment
-                    End="309.041650228824,-25.5526307475647" />
+                    End="241.652763351591,-92.114033159512" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3233,30 +3178,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée2]"
-          TopLeft="584.458316057301,413.263153357189">
+          TopLeft="645.680540291179,299.868417611909">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="236.263874462702,-132.947366492845"
+              EndConnector="93.708316895491,-34.8859640808987"
               Start="0,0"
-              End="236.263874462702,-125.447366492845">
+              End="86.208316895491,-34.8859640808987">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-62.1281703165542" />
+                    End="50.2079501323692,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-62.1281703165542"
-                    Point2="0,-66.1281703165542"
-                    Point3="4,-66.1281703165542" />
+                    Point1="50.2079501323692,0"
+                    Point2="54.2079501323692,0"
+                    Point3="54.2079501323692,-4" />
                   <mssgle:LineSegment
-                    End="232.263874462702,-66.1281703165542" />
+                    End="54.2079501323692,-30.8859640808987" />
                   <mssgle:CubicBezierSegment
-                    Point1="232.263874462702,-66.1281703165542"
-                    Point2="236.263874462702,-66.1281703165542"
-                    Point3="236.263874462702,-70.1281703165542" />
+                    Point1="54.2079501323692,-30.8859640808987"
+                    Point2="54.2079501323692,-34.8859640808987"
+                    Point3="58.2079501323692,-34.8859640808987" />
                   <mssgle:LineSegment
-                    End="236.263874462702,-125.447366492845" />
+                    End="86.208316895491,-34.8859640808987" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3267,30 +3212,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée1]"
-          TopLeft="528.017869852749,142.562656703135">
+          TopLeft="654.041647174086,226.93859440025">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="254.037654000587,95.0864634945421"
+              EndConnector="85.347210012584,32.210525797427"
               Start="0,0"
-              End="254.037654000587,87.5864634945421">
+              End="77.847210012584,32.210525797427">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.3251025795696" />
+                    End="38.673605006292,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52.3251025795696"
-                    Point2="0,56.3251025795696"
-                    Point3="4,56.3251025795696" />
+                    Point1="38.673605006292,0"
+                    Point2="42.673605006292,0"
+                    Point3="42.673605006292,4" />
                   <mssgle:LineSegment
-                    End="250.037654000587,56.3251025795696" />
+                    End="42.673605006292,28.210525797427" />
                   <mssgle:CubicBezierSegment
-                    Point1="250.037654000587,56.3251025795696"
-                    Point2="254.037654000587,56.3251025795696"
-                    Point3="254.037654000587,60.3251025795696" />
+                    Point1="42.673605006292,28.210525797427"
+                    Point2="42.673605006292,32.210525797427"
+                    Point3="46.673605006292,32.210525797427" />
                   <mssgle:LineSegment
-                    End="254.037654000587,87.5864634945421" />
+                    End="77.847210012584,32.210525797427" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3301,30 +3246,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie de colonne dérivée]"
-          TopLeft="664.708313840752,211.771927733583">
+          TopLeft="572.184536519416,113.895990036468">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="74.6805433459174,47.2105257974272"
+              EndConnector="229.204320667254,123.753130161209"
               Start="0,0"
-              End="67.1805433459174,47.2105257974272">
+              End="229.204320667254,116.253130161209">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="33.3402716729587,0" />
+                    End="0,57.8765650806043" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.3402716729587,0"
-                    Point2="37.3402716729587,0"
-                    Point3="37.3402716729587,4" />
+                    Point1="0,57.8765650806043"
+                    Point2="0,61.8765650806043"
+                    Point3="4,61.8765650806043" />
                   <mssgle:LineSegment
-                    End="37.3402716729587,43.2105257974272" />
+                    End="225.204320667254,61.8765650806043" />
                   <mssgle:CubicBezierSegment
-                    Point1="37.3402716729587,43.2105257974272"
-                    Point2="37.3402716729587,47.2105257974272"
-                    Point3="41.3402716729587,47.2105257974272" />
+                    Point1="225.204320667254,61.8765650806043"
+                    Point2="229.204320667254,61.8765650806043"
+                    Point3="229.204320667254,65.8765650806043" />
                   <mssgle:LineSegment
-                    End="67.1805433459174,47.2105257974272" />
+                    End="229.204320667254,116.253130161209" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3335,156 +3280,126 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données3]"
-          TopLeft="309.875009452923,90.4197999205198">
+          TopLeft="309.54167611959,91.4912283118275">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="136.809527066492,30.8095234492819"
+              EndConnector="181.142860399826,0"
               Start="0,0"
-              End="129.309527066492,30.8095234492819">
+              End="173.642860399826,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="64.4047635332462,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="64.4047635332462,0"
-                    Point2="68.4047635332462,0"
-                    Point3="68.4047635332462,4" />
-                  <mssgle:LineSegment
-                    End="68.4047635332462,26.8095234492819" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68.4047635332462,26.8095234492819"
-                    Point2="68.4047635332462,30.8095234492819"
-                    Point3="72.4047635332462,30.8095234492819" />
-                  <mssgle:LineSegment
-                    End="129.309527066492,30.8095234492819" />
+                    End="173.642860399826,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-23.1034786542538,-16.3349609375,183.016484375,10.3349609375"
+              BoundingBox="-4.68681198758694,5,183.016484375,10.3349609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données2]"
-          TopLeft="183.632940796012,374.248116850369">
+          TopLeft="307.744051907123,360.081450183703">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="341.714264150178,39.0150365068196"
+              EndConnector="159.492041927956,41.181703173486"
               Start="0,0"
-              End="341.714264150178,31.5150365068196">
+              End="151.992041927956,41.181703173486">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.470869886967" />
+                    End="75.7460209639781,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.470869886967"
-                    Point2="0,19.470869886967"
-                    Point3="4,19.470869886967" />
+                    Point1="75.7460209639781,0"
+                    Point2="79.7460209639781,0"
+                    Point3="79.7460209639781,4" />
                   <mssgle:LineSegment
-                    End="337.714264150178,19.470869886967" />
+                    End="79.7460209639781,37.181703173486" />
                   <mssgle:CubicBezierSegment
-                    Point1="337.714264150178,19.470869886967"
-                    Point2="341.714264150178,19.470869886967"
-                    Point3="341.714264150178,23.470869886967" />
+                    Point1="79.7460209639781,37.181703173486"
+                    Point2="79.7460209639781,41.181703173486"
+                    Point3="83.7460209639781,41.181703173486" />
                   <mssgle:LineSegment
-                    End="341.714264150178,31.5150365068196" />
+                    End="151.992041927956,41.181703173486" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="79.3488898875891,24.470869886967,183.016484375,10.3349609375"
+              BoundingBox="-11.7622212235219,-16.3349609375,183.016484375,10.3349609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données1]"
-          TopLeft="246.666666666667,289.152879264908">
+          TopLeft="308,296.093981771742">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="135.013873624513,45.5488716803335"
+              EndConnector="154.680540291179,0"
               Start="0,0"
-              End="127.513873624513,45.5488716803335">
+              End="147.180540291179,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="63.5069368122563,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="63.5069368122563,0"
-                    Point2="67.5069368122563,0"
-                    Point3="67.5069368122563,4" />
-                  <mssgle:LineSegment
-                    End="67.5069368122563,41.5488716803335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="67.5069368122563,41.5488716803335"
-                    Point2="67.5069368122563,45.5488716803335"
-                    Point3="71.5069368122563,45.5488716803335" />
-                  <mssgle:LineSegment
-                    End="127.513873624513,45.5488716803335" />
+                    End="147.180540291179,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-24.0013053752437,-16.3349609375,183.016484375,10.3349609375"
+              BoundingBox="-17.9179720419105,5,183.016484375,10.3349609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Sortie d'erreur de conversion de données]"
-          TopLeft="285.482141956421,212.058895389488">
+          TopLeft="318.148808623088,225.725562056155">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="178.559505217665,0"
+              EndConnector="134.892838550998,0"
               Start="0,0"
-              End="171.059505217665,0">
+              End="127.392838550998,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="171.059505217665,0" />
+                    End="127.392838550998,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-5.97848957866748,5,183.016484375,10.3349609375"
+              BoundingBox="-27.8118229120008,5,183.016484375,10.3349609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Derived Column Output]"
-          TopLeft="64.2797739174928,424.929824972086">
+          TopLeft="168.168662694623,453.596491638753">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67.9444442209269,39.5321642284986"
+              EndConnector="0,25.865497561832"
               Start="0,0"
-              End="67.9444442209269,32.0321642284986">
+              End="0,18.365497561832">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="63.9444442209269,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="63.9444442209269,0"
-                    Point2="67.9444442209269,0"
-                    Point3="67.9444442209269,4" />
-                  <mssgle:LineSegment
-                    End="67.9444442209269,32.0321642284986" />
+                    End="0,18.365497561832" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3495,24 +3410,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_data.Paths[Data Conversion Output]"
-          TopLeft="90.9881042240277,159.505848854716">
+          TopLeft="201.068456423558,169.394737743605">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="75.8273710657266,31.5066808573439"
+              EndConnector="0,33.617791968455"
               Start="0,0"
-              End="75.8273710657266,24.0066808573439">
+              End="0,26.117791968455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="71.8273710657266,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="71.8273710657266,0"
-                    Point2="75.8273710657266,0"
-                    Point3="75.8273710657266,4" />
-                  <mssgle:LineSegment
-                    End="75.8273710657266,24.0066808573439" />
+                    End="0,26.117791968455" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

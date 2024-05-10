@@ -11,48 +11,10 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="ODS_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{4AD13506-4FBC-44AF-8673-E77757682F63}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{685A1A12-919D-4459-84B8-ADC87B8C2A66}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{7B82A818-5C8A-4E70-82E1-8D16CDFE0991}"
-      DTS:ObjectName="localhost.SS_ODS 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Employee-{7B82A818-5C8A-4E70-82E1-8D16CDFE0991}localhost.SS_ODS 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 2]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{14B6F69A-C2A5-4D83-A952-6D0D7BAFBDAB}"
-      DTS:ObjectName="localhost.SS_ODS 2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Employee-{14B6F69A-C2A5-4D83-A952-6D0D7BAFBDAB}localhost.SS_ODS 2;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.SS_ODS 3]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{8B423A37-FBFC-40C4-9E15-37F9874CEE8D}"
-      DTS:ObjectName="localhost.SS_ODS 3">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SS_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Employee-{8B423A37-FBFC-40C4-9E15-37F9874CEE8D}localhost.SS_ODS 3;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -1166,7 +1128,7 @@ where [refTable].[StateCD] = ?</property>
           Id="Package\DFT - ODS Employee"
           TopLeft="175,136" />
         <NodeLayout
-          Size="233.333333333334,42"
+          Size="233,42"
           Id="Package\SQL - Truncate ODS Employee"
           TopLeft="155,32" />
         <EdgeLayout

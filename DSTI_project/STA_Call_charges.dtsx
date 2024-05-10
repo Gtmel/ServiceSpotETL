@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{2AE4A9BC-3FC0-42CB-A918-15AA23029FD1}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{A14E4131-2E5C-4011-99DB-D364234D15FF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\kacik\Documents\data\Call Charges.csv">
+          DTS:ConnectionString="C:\Users\okial\Documents\DSTI\Data Warehousing &amp; ETL\Project Files\Data\Call Charges.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -81,18 +81,6 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.A23_STA]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{81BD6E5F-04A9-4650-A1B4-97F35342A64E}"
-      DTS:ObjectName="localhost.A23_STA">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=A23_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-STA_Call_charges-{81BD6E5F-04A9-4650-A1B4-97F35342A64E}localhost.A23_STA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -546,7 +534,7 @@
           Id="Package\DFT - STA Call_charges"
           TopLeft="162.874994104728,133.578945978609" />
         <NodeLayout
-          Size="234.666666666667,42"
+          Size="235,42"
           Id="Package\SQL -TRUNCATE Call_charges"
           TopLeft="138.124993825332,43.1052626846075" />
         <EdgeLayout
